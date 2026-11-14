@@ -145,6 +145,13 @@
     font-size: 2.6rem; font-weight: 800; text-align: center; margin-top: .2rem;
     font-variant-numeric: tabular-nums; min-height: 1.2em;
   }
+  /* Five or more teams: tighter cards so they fit beside the board. */
+  .teams.many { gap: .5rem; }
+  .teams.many .team-card { padding: .45rem .7rem; }
+  .teams.many .team-card .name { font-size: 1rem; }
+  .teams.many .team-card .total { font-size: .8rem; }
+  .teams.many .team-card input { font-size: 1.5rem; margin-top: .25rem; }
+  .teams.many .team-card .took { font-size: 1.9rem; }
   .team-card .note { text-align: center; font-size: .8rem; color: var(--warn); min-height: 1.1em; }
   .team-card.flip .took { animation: flip .45s ease-out both; }
   @keyframes flip { from { transform: rotateX(90deg); opacity: 0; } to { transform: none; opacity: 1; } }
@@ -187,7 +194,7 @@
 
   /* ---------- Results ---------- */
   #results .big { font-size: 2.2rem; font-weight: 800; margin: .2rem 0 1rem; }
-  .podium { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1rem 0; }
+  .podium { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin: 1rem 0; }
   .podium .team-card { text-align: center; }
   .podium .team-card .took { font-size: 2.4rem; }
   .podium.no-winner .team-card { opacity: .55; border-style: dashed dashed dashed solid; }
@@ -210,7 +217,6 @@
 
   @media (max-width: 900px) {
     #setup, #game { grid-template-columns: 1fr; }
-    .podium { grid-template-columns: 1fr 1fr; }
     .compare { grid-template-columns: 1fr; }
   }
   @media (max-width: 520px) {
@@ -305,6 +311,14 @@
       <label class="checkbox"><input id="noWinnerRule" type="checkbox" checked> No winner if the <span class="rPlace">lake</span> collapses before the last round</label>
 
       <h2 style="margin-top:.6rem">Teams</h2>
+      <div class="field" style="max-width:14rem">
+        <label for="teamCount">Number of teams</label>
+        <select id="teamCount">
+          <option>2</option><option>3</option><option selected>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option>
+        </select>
+        <small>More teams make cooperation harder.</small>
+      </div>
       <div id="teamFields"></div>
 
       <div class="actions">
@@ -316,7 +330,7 @@
     <div class="panel">
       <h2>How it works</h2>
       <ol class="rules">
-        <li>Four teams share one <span class="rPlace">lake</span> of <b class="rName">fish</b>.</li>
+        <li><span id="ruleTeams">Four</span> teams share one <span class="rPlace">lake</span> of <b class="rName">fish</b>.</li>
         <li>Each round, every team secretly writes down how many <span class="rName">fish</span> it wants to <span class="vBase">catch</span> (0 to the max). Collect the slips and type the numbers in.</li>
         <li>Press <b>Reveal</b>. Each team gets what it asked for. If the <span class="rPlace">lake</span> can't cover every request, the <span class="vNoun">catch</span> is split in proportion to what each team asked for.</li>
         <li>Press <b>Regrow</b>. Whatever is left in the <span class="rPlace">lake</span> multiplies, up to its capacity.</li>
@@ -440,12 +454,10 @@
   "use strict";
 
   var STORE_KEY = "commons-game-v1";
-  var DEFAULT_TEAMS = [
-    { name: "Team 1", color: "#d1495b" },
-    { name: "Team 2", color: "#edae49" },
-    { name: "Team 3", color: "#00798c" },
-    { name: "Team 4", color: "#6a4c93" }
-  ];
+  // Okabe-Ito colors, which stay distinguishable for the common kinds of color blindness.
+  var TEAM_COLORS = ["#0072B2", "#E69F00", "#009E73", "#CC79A7", "#D55E00", "#56B4E9", "#F0E442", "#000000"];
+  var MIN_TEAMS = 2, MAX_TEAMS = 8;
+  var DEFAULT_TEAMS = TEAM_COLORS.map(function (c, i) { return { name: "Team " + (i + 1), color: c }; });
 
   var S = null; // game state
 
@@ -567,7 +579,7 @@
 
   // Best total over the game if the class played optimally (simple DP over stock levels).
   function bestPossible(cfg) {
-    var cap = cfg.capacity, maxTotal = cfg.maxTake * 4;
+    var cap = cfg.capacity, maxTotal = cfg.maxTake * cfg.teams.length;
     var memo = {};
     function f(r, stock) {
       if (r === 0 || stock <= 0) return 0;
@@ -643,7 +655,29 @@
 
   /* ---------- Setup screen ---------- */
 
+  function nTeams() { return S.cfg.teams.length; }
+  function zeros() { return S.cfg.teams.map(function () { return 0; }); }
+  function blanks() { return S.cfg.teams.map(function () { return ""; }); }
+  var NUMBER_WORDS = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"];
+
+  // Keep names and colors already typed when the team count changes.
+  function readTeamFields() {
+    var teams = [];
+    for (var i = 0; $("tname" + i); i++) {
+      var d = DEFAULT_TEAMS[i];
+      teams.push({ name: ($("tname" + i).value || "").trim() || d.name, color: $("tcolor" + i).value || d.color });
+    }
+    return teams;
+  }
+  function onTeamCountChange() {
+    var n = clampInt($("teamCount").value, MIN_TEAMS, MAX_TEAMS, 4);
+    var cur = readTeamFields();
+    renderTeamFields(DEFAULT_TEAMS.slice(0, n).map(function (d, i) { return cur[i] || d; }));
+  }
+
   function renderTeamFields(teams) {
+    $("teamCount").value = String(teams.length);
+    $("ruleTeams").textContent = NUMBER_WORDS[teams.length] || String(teams.length);
     var html = "";
     teams.forEach(function (t, i) {
       html += '<div class="team-row">' +
@@ -681,10 +715,7 @@
     var growth = parseFloat($("growth").value);
     if (isNaN(growth) || growth < 1.1) growth = 2;
     if (growth > 5) growth = 5;
-    var teams = DEFAULT_TEAMS.map(function (d, i) {
-      var name = ($("tname" + i).value || "").trim() || d.name;
-      return { name: name, color: $("tcolor" + i).value || d.color };
-    });
+    var teams = readTeamFields();
     return {
       resName: ($("resName").value || "").trim() || "fish",
       place: ($("resPlace").value || "").trim() || "lake",
@@ -750,17 +781,17 @@
   }
   function lastRound() { return S.history[S.history.length - 1]; }
   function teamTotals() {
-    var t = [0, 0, 0, 0];
+    var t = zeros();
     S.history.forEach(function (h) { h.takes.forEach(function (v, i) { t[i] += v; }); });
     return t;
   }
   function teamFines() {
-    var f = [0, 0, 0, 0];
+    var f = zeros();
     S.fines.forEach(function (x) { f[x.team] += x.amount; });
     return f;
   }
   function teamBonuses() {
-    var b = [0, 0, 0, 0];
+    var b = zeros();
     S.history.forEach(function (h) { if (h.bonusTeam >= 0) b[h.bonusTeam] += h.bonus; });
     return b;
   }
@@ -894,6 +925,7 @@
     var wrap = $("teamCards");
     wrap.innerHTML = html;
     wrap.classList.toggle("masked", S.cfg.mask);
+    wrap.classList.toggle("many", nTeams() > 4);
     if (S.phase === "entry") {
       S.cfg.teams.forEach(function (t, i) {
         var el = $("in" + i);
@@ -906,7 +938,7 @@
         el.addEventListener("keydown", function (e) {
           if (e.key !== "Enter") return;
           e.preventDefault();
-          if (i < 3) $("in" + (i + 1)).focus();
+          if (i < nTeams() - 1) $("in" + (i + 1)).focus();
           else if (!$("btnMain").disabled) doMain();
         });
       });
@@ -924,8 +956,8 @@
     });
     $("btnMain").disabled = !ok;
     var filled = S.pending.filter(function (v) { return v !== ""; }).length;
-    $("msg").textContent = ok ? "All four teams are in. Press Reveal." :
-      filled + " of 4 teams entered. Each team can " + verb().base + " 0 to " + S.cfg.maxTake + ".";
+    $("msg").textContent = ok ? "All " + nTeams() + " teams are in. Press Reveal." :
+      filled + " of " + nTeams() + " teams entered. Each team can " + verb().base + " 0 to " + S.cfg.maxTake + ".";
     $("msg").style.color = "";
     return ok;
   }
@@ -1034,7 +1066,9 @@
       team: parseInt($("fineTeam").value, 10) || 0,
       amount: amt,
       reason: ($("fineWhy").value || "").trim(),
-      round: Math.max(1, Math.min(currentRound(), S.cfg.rounds))
+      round: Math.max(1, Math.min(currentRound(), S.cfg.rounds)),
+      // How many rounds had been revealed when the fine was given, so undo can remove it.
+      afterRounds: S.history.length
     });
     $("fineAmt").value = "";
     $("fineWhy").value = "";
@@ -1135,7 +1169,8 @@
   }
 
   function startGame(cfg) {
-    S = { id: "g" + Date.now(), cfg: cfg, stock: cfg.start, history: [], fines: [], phase: "entry", pending: ["", "", "", ""], over: false };
+    S = { id: "g" + Date.now(), cfg: cfg, stock: cfg.start, history: [], fines: [], phase: "entry", pending: [], over: false };
+    S.pending = blanks();
     $("talk").checked = false;
     save();
     showScreen("game");
@@ -1168,7 +1203,7 @@
     S.history.push(h);
     S.stock = h.afterHarvest;
     S.phase = "revealed";
-    S.pending = ["", "", "", ""];
+    S.pending = blanks();
     save();
 
     renderAll("caught", -sum(takes));
@@ -1191,7 +1226,7 @@
     $("msg").textContent = "";
     var i = 0;
     var timer = setInterval(function () {
-      if (i < 4) {
+      if (i < nTeams()) {
         var card = $("card" + i);
         $("took" + i).style.visibility = "";
         $("note" + i).style.visibility = "";
@@ -1206,7 +1241,7 @@
         btn.disabled = false;
         btn.focus();
       }
-    }, 650);
+    }, nTeams() > 4 ? 400 : 650);
   }
 
   // Lock controls that re-render the team cards while the reveal animation runs.
@@ -1264,9 +1299,18 @@
     }
   }
 
+  // Fines given after a round was revealed belong to that round. Older saves only have the round label.
+  function finesAfter(k) {
+    return S.fines.filter(function (f) { return (f.afterRounds != null ? f.afterRounds : f.round) >= k; });
+  }
+
   function undo() {
     if (!S.history.length) return;
-    if (!confirm("Undo round " + S.history.length + "? The numbers entered for that round will be restored for editing.")) return;
+    var k = S.history.length, dropped = finesAfter(k);
+    var note = dropped.length ? " " + dropped.length + (dropped.length === 1 ? " fine" : " fines") +
+      " given since then will also be removed." : "";
+    if (!confirm("Undo round " + k + "? The numbers entered for that round will be restored for editing." + note)) return;
+    S.fines = S.fines.filter(function (f) { return dropped.indexOf(f) < 0; });
     var h = S.history.pop();
     S.stock = h.stockBefore;
     S.pending = h.requests.map(String);
@@ -1303,7 +1347,7 @@
     $("podium").classList.toggle("no-winner", noWinner);
 
     var bonuses = teamBonuses(), ranks = teamRanks(scores);
-    var order = [0, 1, 2, 3].sort(function (a, b) { return scores[b] - scores[a]; });
+    var order = scores.map(function (v, i) { return i; }).sort(function (a, b) { return scores[b] - scores[a]; });
     var html = "";
     order.forEach(function (i) {
       var t = cfg.teams[i];
@@ -1329,7 +1373,7 @@
     $("sustainNote").textContent =
       "Sustainable strategy: keep at least " + sy.keep + " " + cfg.resName + " in the " + place() + " after each harvest. " +
       "From a full " + place() + " that allows about " + sy.perRound + " per round in total, or about " +
-      Math.floor(sy.perRound / 4) + " per team, forever. " +
+      Math.floor(sy.perRound / nTeams()) + " per team, forever. " +
       "“Best possible” is the most the class could have " + verb().part + " in " + cfg.rounds +
       " rounds with perfect cooperation, given the " + cfg.maxTake + "-per-team limit.";
 
@@ -1396,6 +1440,7 @@
   $("resEmoji").addEventListener("change", onIconChange);
   $("resVerb").addEventListener("change", syncResName);
   $("noWinnerRule").addEventListener("change", syncRuleText);
+  $("teamCount").addEventListener("change", onTeamCountChange);
   $("bonus").addEventListener("input", syncBonusText);
   $("btnFull").addEventListener("click", function () {
     if (document.fullscreenElement) document.exitFullscreen();
@@ -1533,7 +1578,7 @@
     fillSetup({
       resName: "fish", place: "lake", verb: "catch", emoji: "🐟", capacity: 100, start: 100, growth: 2,
       maxTake: 20, rounds: 8, showRounds: false, mask: true, bonus: 0, showRank: true,
-      teams: DEFAULT_TEAMS
+      teams: DEFAULT_TEAMS.slice(0, 4)
     });
   }
   showScreen("setup");
