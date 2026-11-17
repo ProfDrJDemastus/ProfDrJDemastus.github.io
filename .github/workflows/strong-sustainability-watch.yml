@@ -10,7 +10,7 @@ permissions:
   pages: write
 
 concurrency:
-  group: strong-sustainability-watch
+  group: site-data-sweeps
   cancel-in-progress: false
 
 jobs:
@@ -35,6 +35,7 @@ jobs:
             exit 0
           fi
           git commit -m "Strong sustainability sweep $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push
 
       - name: Rebuild the site

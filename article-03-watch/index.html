@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article 03 Search Monitor</title>
+<meta name="description" content="OpenAlex replica of a Web of Science search for strong and weak sustainability terms in 13 business-responsibility journals. Updated weekly.">
+<style>
+  :root {
+    --bg: #f4f6f8; --panel: #fff; --ink: #14202b; --muted: #5b6b78; --faint: #8a98a3;
+    --line: #d7dee4; --accent: #0b6e99; --core: #24684a; --core-soft: #e4f1e9;
+    --adj: #7a5a12; --adj-soft: #f6efdc; --soft: #eef1f3; --new: #a15c00; --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .4rem; line-height: 1.2; }
+  h2 { font-size: 1.05rem; margin: 0 0 .7rem; }
+  .lede { color: var(--muted); margin: 0 0 .6rem; max-width: 48rem; }
+  .status { font-size: .9rem; color: var(--muted); margin: 0 0 1.6rem; }
+  .status b { color: var(--ink); }
+  a { color: var(--accent); }
+  button, input, select { font: inherit; color: inherit; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.15rem; margin-bottom: 1.4rem; }
+  .tablewrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+  th, td { text-align: left; padding: .38rem .7rem .38rem 0; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  th { color: var(--muted); font-weight: 600; }
+  td.num, th.num { text-align: right; }
+  tr.pick td:first-child { cursor: pointer; color: var(--accent); }
+  tr.on td { background: #f0f6fa; }
+  tfoot td { font-weight: 600; border-bottom: none; }
+  .controls { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; margin-bottom: .9rem; }
+  .controls input[type=search] { flex: 1 1 15rem; min-width: 0; padding: .55rem .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+  .controls select { padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); max-width: 100%; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); }
+  .seg button { border: none; background: none; padding: .45rem .8rem; cursor: pointer; font-size: .88rem; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button.on { background: var(--ink); color: #fff; }
+  .pill { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: .4rem .85rem; font-size: .88rem; cursor: pointer; }
+  .pill.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .btn { border: 1px solid var(--accent); color: var(--accent); background: var(--panel); border-radius: 10px; padding: .45rem .85rem; font-size: .88rem; cursor: pointer; }
+  .showing { font-size: .88rem; color: var(--muted); margin: 0 0 .7rem; }
+  .linkbtn { background: none; border: none; color: var(--accent); padding: 0; cursor: pointer; font-size: .88rem; text-decoration: underline; }
+  .row { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: .7rem .95rem; }
+  .row + .row { margin-top: .5rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: .3rem .7rem; align-items: center; font-size: .8rem; color: var(--muted); }
+  .meta .j { color: var(--ink); font-weight: 600; }
+  .badge { font-size: .72rem; font-weight: 700; border-radius: 6px; padding: .08rem .45rem; }
+  .badge.core { background: var(--core-soft); color: var(--core); }
+  .badge.adjacent { background: var(--adj-soft); color: var(--adj); }
+  .badge.new { color: var(--new); border: 1px solid var(--new); text-transform: uppercase; letter-spacing: .04em; }
+  .flag { font-size: .75rem; color: var(--faint); }
+  .row h3 { font-size: .98rem; line-height: 1.35; margin: .25rem 0 .15rem; font-weight: 600; }
+  .row h3 a { color: var(--ink); text-decoration: none; }
+  .row h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .sub { font-size: .82rem; color: var(--muted); margin: 0; }
+  .more { display: block; margin: 1rem auto 0; }
+  .empty { background: var(--panel); border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem 1.2rem; text-align: center; color: var(--muted); }
+  .about details { padding: .7rem 0; }
+  .about details + details { border-top: 1px solid var(--line); }
+  .about summary { cursor: pointer; font-weight: 600; }
+  .about p, .about li { font-size: .9rem; color: #2c3a46; }
+  @media (max-width: 680px) { main { padding-top: 1.6rem; } h1 { font-size: 1.55rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Article 03 Search Monitor</h1>
+  <p class="lede">An OpenAlex replica of a Web of Science search for strong and weak sustainability terms in 13 Q1 and Q2 business-responsibility journals, covering all years through 2026. Records are term matches awaiting screening, not included articles. A new search runs every Monday.</p>
+  <p class="status" id="status">Loading…</p>
+
+  <section class="panel">
+    <h2>Records by journal</h2>
+    <div class="tablewrap" id="byjournal"></div>
+  </section>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Stream">
+      <button type="button" data-stream="all" class="on">All</button>
+      <button type="button" data-stream="core">Core</button>
+      <button type="button" data-stream="adjacent">Adjacent</button>
+    </div>
+    <button class="pill" id="f-new" type="button">New this week</button>
+    <button class="pill" id="f-sust" type="button" title="Adjacent records must also mention sustainability, as in the search-terms sheet">Mentions sustainability</button>
+    <select id="year" aria-label="Years"></select>
+    <input type="search" id="q" placeholder="Search titles and authors" aria-label="Search">
+    <button class="btn" id="csv" type="button">Download CSV</button>
+  </div>
+  <p class="showing" id="showing"></p>
+  <div id="list"></div>
+
+  <section class="panel about" style="margin-top:2rem">
+    <details>
+      <summary>How this works</summary>
+      <p>Every Monday a script on GitHub searches <a href="https://openalex.org">OpenAlex</a> titles and abstracts for each search term, separately for every ISSN of each journal, with no start date and an end date of 31 December 2026. A record is kept when its title, abstract or OpenAlex keywords contain one of the terms, so stemmed near-misses are dropped. Records with a core term form the core stream. Records with only adjacent terms form the adjacent stream.</p>
+      <p>The core terms are strong sustainability, weak sustainability and sustainability strength. The adjacent terms are greenwashing and its variants, business-as-usual, business case for sustainability, integral sustainability, integrated sustainability, sustainability maturity and true sustainability. The Mentions sustainability filter applies the stricter rule that adjacent records must also mention sustainability.</p>
+      <p>OpenAlex differs from the Web of Science Topic field. It searches titles and abstracts but not author keywords or Keywords Plus, and some records have no abstract in OpenAlex, which the list marks. Use it as a cross-check and monitor, not a replacement. The search settings are in <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/article-03-watch/config/search.json">search.json</a> and <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/article-03-watch/config/journals.json">journals.json</a>.</p>
+    </details>
+    <details>
+      <summary>Search log</summary>
+      <div class="tablewrap" id="log"></div>
+    </details>
+  </section>
+</main>
+<script>
+(function () {
+  "use strict";
+  var PAGE = 150;
+  var st = { stream: "all", onlyNew: false, sust: false, journal: null, year: "all", q: "", shown: PAGE };
+  var d = { recs: [], runs: [], journals: [] };
+  var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var MONL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function fd(iso, long) { if (!iso) return ""; var p = iso.split("-"); return p.length < 3 ? iso : parseInt(p[2], 10) + " " + (long ? MONL : MON)[+p[1] - 1] + " " + p[0]; }
+  function last() { return d.runs.length ? d.runs[d.runs.length - 1] : null; }
+  function isNew(r) { var x = last(); return !!(x && !x.first_run && r.first_seen === x.date); }
+  function passSust(r) { return !st.sust || r.stream === "core" || r.mentions_sustainability; }
+
+  function filtered() {
+    var q = st.q.trim().toLowerCase();
+    return d.recs.filter(function (r) {
+      if (st.stream !== "all" && r.stream !== st.stream) return false;
+      if (st.onlyNew && !isNew(r)) return false;
+      if (!passSust(r)) return false;
+      if (st.journal && r.journal_id !== st.journal) return false;
+      if (st.year !== "all") {
+        if (st.year === "upd" && !(r.year >= 2023)) return false;
+        if (st.year === "base" && !(r.year <= 2022)) return false;
+      }
+      if (q && (r.title + " " + r.authors.join(" ")).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+  }
+
+  function renderStatus() {
+    var x = last();
+    if (!x) { $("status").textContent = "The first search has not run yet."; return; }
+    var parts = ["Last search <b>" + esc(fd(x.date, true)) + "</b>", "<b>" + x.records + "</b> records",
+      "<b>" + x.core + "</b> core", "<b>" + x.adjacent + "</b> adjacent"];
+    parts.push(x.first_run ? "first search" : "<b>" + x.new + "</b> new this week");
+    $("status").innerHTML = parts.join(" · ");
+  }
+
+  function renderJournals() {
+    var rows = d.journals.map(function (j) {
+      var rs = d.recs.filter(function (r) { return r.journal_id === j.id && passSust(r); });
+      return { j: j, core: rs.filter(function (r) { return r.stream === "core"; }).length,
+        adj: rs.filter(function (r) { return r.stream === "adjacent"; }).length,
+        upd: rs.filter(function (r) { return r.year >= 2023; }).length, nw: rs.filter(isNew).length };
+    });
+    var t = { core: 0, adj: 0, upd: 0, nw: 0 };
+    var body = rows.map(function (x) {
+      t.core += x.core; t.adj += x.adj; t.upd += x.upd; t.nw += x.nw;
+      return '<tr class="pick' + (st.journal === x.j.id ? " on" : "") + '" data-j="' + esc(x.j.id) + '"><td>' + esc(x.j.name) +
+        '</td><td class="num">' + x.core + '</td><td class="num">' + x.adj + '</td><td class="num">' + x.upd + '</td><td class="num">' + x.nw + "</td></tr>";
+    }).join("");
+    $("byjournal").innerHTML = '<table><thead><tr><th>Journal</th><th class="num">Core</th><th class="num">Adjacent</th><th class="num">2023 to 2026</th><th class="num">New this week</th></tr></thead><tbody>' +
+      body + '</tbody><tfoot><tr><td>All 13 journals</td><td class="num">' + t.core + '</td><td class="num">' + t.adj + '</td><td class="num">' + t.upd + '</td><td class="num">' + t.nw + "</td></tr></tfoot></table>";
+    Array.prototype.forEach.call($("byjournal").querySelectorAll("tr.pick"), function (tr) {
+      tr.onclick = function () { var id = tr.getAttribute("data-j"); st.journal = st.journal === id ? null : id; st.shown = PAGE; render(); };
+    });
+  }
+
+  function row(r) {
+    var terms = []; Object.keys(r.terms || {}).forEach(function (k) { terms = terms.concat(r.terms[k]); });
+    var flags = [];
+    if (!r.has_abstract) flags.push("no abstract in OpenAlex");
+    if (r.language && r.language !== "en") flags.push("language " + r.language);
+    if (r.missing_since) flags.push("no longer returned since " + fd(r.missing_since));
+    var h = '<div class="row"><div class="meta"><span class="j">' + esc(r.journal) + "</span><span>" + esc(r.year || "") + "</span>";
+    h += '<span class="badge ' + r.stream + '">' + (r.stream === "core" ? "Core" : "Adjacent") + "</span>";
+    h += "<span>" + esc(terms.join(", ")) + "</span>";
+    if (isNew(r)) h += '<span class="badge new">New</span>';
+    if (flags.length) h += '<span class="flag">' + esc(flags.join(" · ")) + "</span>";
+    h += "</div>";
+    var href = r.doi ? "https://doi.org/" + r.doi : "https://openalex.org/" + r.id;
+    h += '<h3><a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a></h3>";
+    var au = r.authors.slice(0, 6).join(", ") + (r.authors.length > 6 ? ", et al." : "");
+    h += '<p class="sub">' + esc(au || "Authors not listed") + (r.doi ? " · " + esc(r.doi) : "") + "</p></div>";
+    return h;
+  }
+
+  function renderList() {
+    var list = filtered();
+    var j = st.journal ? d.journals.filter(function (x) { return x.id === st.journal; })[0] : null;
+    var s = "Showing <b>" + Math.min(list.length, st.shown) + "</b> of " + list.length + " matching records";
+    if (j) s += " · " + esc(j.name) + ' <button class="linkbtn" type="button" id="clearj">clear</button>';
+    $("showing").innerHTML = s;
+    if ($("clearj")) $("clearj").onclick = function () { st.journal = null; render(); };
+    if (!d.recs.length) { $("list").innerHTML = '<div class="empty">No records yet. The list fills after the first search.</div>'; return; }
+    if (!list.length) { $("list").innerHTML = '<div class="empty">Nothing matches these filters.</div>'; return; }
+    var h = list.slice(0, st.shown).map(row).join("");
+    if (list.length > st.shown) h += '<button class="btn more" id="more" type="button">Show ' + Math.min(PAGE, list.length - st.shown) + " more</button>";
+    $("list").innerHTML = h;
+    if ($("more")) $("more").onclick = function () { st.shown += PAGE; renderList(); };
+  }
+
+  function renderLog() {
+    if (!d.runs.length) { $("log").innerHTML = "<p>No searches yet.</p>"; return; }
+    $("log").innerHTML = "<table><thead><tr><th>Search</th><th class='num'>Records</th><th class='num'>Core</th><th class='num'>Adjacent</th><th class='num'>New</th><th>Notes</th></tr></thead><tbody>" +
+      d.runs.slice().reverse().map(function (x) {
+        var n = []; if (x.first_run) n.push("first search");
+        if (x.capped && x.capped.length) n.push("capped: " + x.capped.join(", "));
+        return "<tr><td>" + esc(fd(x.date)) + "</td><td class='num'>" + x.records + "</td><td class='num'>" + x.core + "</td><td class='num'>" + x.adjacent + "</td><td class='num'>" + x.new + "</td><td>" + esc(n.join("; ")) + "</td></tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  function csv() {
+    var cols = ["OpenAlex ID","DOI","Title","Authors","Journal","Year","Published","Type","Stream","Core terms","Adjacent terms","Has abstract in OpenAlex","Mentions sustainability","First seen"];
+    function cell(v) { v = String(v == null ? "" : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+    var lines = [cols.join(",")].concat(filtered().map(function (r) {
+      return [r.id, r.doi, r.title, r.authors.join("; "), r.journal, r.year, r.published, r.type, r.stream,
+        ((r.terms || {}).core || []).join("; "), ((r.terms || {}).adjacent || []).join("; "),
+        r.has_abstract ? "yes" : "no", r.mentions_sustainability ? "yes" : "no", r.first_seen].map(cell).join(",");
+    }));
+    var blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "article-03-openalex-records-" + (last() ? last().date : "none") + ".csv";
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  function render() { renderStatus(); renderJournals(); renderList(); }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-stream]"), function (b) {
+    b.onclick = function () {
+      st.stream = b.getAttribute("data-stream"); st.shown = PAGE;
+      Array.prototype.forEach.call(document.querySelectorAll("[data-stream]"), function (x) { x.classList.toggle("on", x === b); });
+      renderList();
+    };
+  });
+  $("f-new").onclick = function () { st.onlyNew = !st.onlyNew; this.classList.toggle("on", st.onlyNew); st.shown = PAGE; renderList(); };
+  $("f-sust").onclick = function () { st.sust = !st.sust; this.classList.toggle("on", st.sust); st.shown = PAGE; render(); };
+  $("year").innerHTML = '<option value="all">All years</option><option value="upd">2023 to 2026 (update)</option><option value="base">Through 2022 (baseline)</option>';
+  $("year").onchange = function (e) { st.year = e.target.value; st.shown = PAGE; renderList(); };
+  $("q").addEventListener("input", function (e) { st.q = e.target.value; st.shown = PAGE; renderList(); });
+  $("csv").onclick = csv;
+
+  function getJSON(p) { return fetch(p, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }); }
+  Promise.all([getJSON("data/records.json").catch(function () { return []; }), getJSON("data/runs.json").catch(function () { return []; }), getJSON("config/journals.json")])
+    .then(function (res) { d.recs = res[0] || []; d.runs = res[1] || []; d.journals = (res[2] && res[2].journals) || []; render(); renderLog(); })
+    .catch(function (e) { $("status").textContent = "Could not load the data (" + e.message + ")."; });
+})();
+</script>
+</body>
+</html>

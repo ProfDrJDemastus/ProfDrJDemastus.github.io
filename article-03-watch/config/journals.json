@@ -1,0 +1,108 @@
+{
+ "note": "The 13 journals ranked Q1 or Q2 in Management, Business, Environmental Studies or Social Issues in the 2025 JCR edition (June 2026), as in the Article 03 manuscript.",
+ "journals": [
+  {
+   "id": "bas",
+   "name": "Business & Society",
+   "issns": [
+    "0007-6503",
+    "1552-4205"
+   ]
+  },
+  {
+   "id": "bse",
+   "name": "Business Strategy and the Environment",
+   "issns": [
+    "0964-4733",
+    "1099-0836"
+   ]
+  },
+  {
+   "id": "ce",
+   "name": "Clean Energy",
+   "issns": [
+    "2515-4230",
+    "2515-396X"
+   ]
+  },
+  {
+   "id": "ctep",
+   "name": "Clean Technologies and Environmental Policy",
+   "issns": [
+    "1618-954X",
+    "1618-9558"
+   ]
+  },
+  {
+   "id": "csrem",
+   "name": "Corporate Social Responsibility and Environmental Management",
+   "issns": [
+    "1535-3958",
+    "1535-3966"
+   ]
+  },
+  {
+   "id": "jclp",
+   "name": "Journal of Cleaner Production",
+   "issns": [
+    "0959-6526"
+   ]
+  },
+  {
+   "id": "jeem",
+   "name": "Journal of Environmental Economics and Management",
+   "issns": [
+    "0095-0696",
+    "1096-0449"
+   ]
+  },
+  {
+   "id": "jem",
+   "name": "Journal of Environmental Management",
+   "issns": [
+    "0301-4797",
+    "1095-8630"
+   ]
+  },
+  {
+   "id": "oae",
+   "name": "Organization & Environment",
+   "issns": [
+    "1086-0266",
+    "1552-7417"
+   ]
+  },
+  {
+   "id": "srj",
+   "name": "Social Responsibility Journal",
+   "issns": [
+    "1747-1117",
+    "1758-857X"
+   ]
+  },
+  {
+   "id": "jri",
+   "name": "Journal of Responsible Innovation",
+   "issns": [
+    "2329-9460",
+    "2329-9037"
+   ]
+  },
+  {
+   "id": "sampj",
+   "name": "Sustainability Accounting, Management and Policy Journal",
+   "issns": [
+    "2040-8021",
+    "2040-803X"
+   ]
+  },
+  {
+   "id": "tm",
+   "name": "Tourism Management",
+   "issns": [
+    "0261-5177",
+    "1879-3193"
+   ]
+  }
+ ]
+}

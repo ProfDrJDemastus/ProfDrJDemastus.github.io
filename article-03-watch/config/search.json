@@ -1,0 +1,35 @@
+{
+ "note": "OpenAlex replica of the Article 03 Web of Science searches. Each query term is searched in OpenAlex titles and abstracts for every ISSN of every journal. A record is kept only when its title, abstract or OpenAlex keywords match one of the stream patterns, so the matching rule is exact and reportable.",
+ "to_publication_date": "2026-12-31",
+ "keep_types": ["article", "review"],
+ "query_terms": [
+  "strong sustainability", "weak sustainability", "sustainability strength",
+  "greenwash", "greenwashing", "green wash", "green washing",
+  "business as usual", "business case for sustainability",
+  "integral sustainability", "integrated sustainability",
+  "sustainability maturity", "true sustainability"
+ ],
+ "streams": {
+  "core": {
+   "label": "Core stream",
+   "terms": {
+    "strong sustainability": "\\bstrong sustainability\\b",
+    "weak sustainability": "\\bweak sustainability\\b",
+    "sustainability strength": "\\bsustainability strength\\b"
+   }
+  },
+  "adjacent": {
+   "label": "Adjacent stream",
+   "terms": {
+    "greenwashing": "\\bgreen[- ]?wash\\w*",
+    "business-as-usual": "\\bbusiness[- ]as[- ]usual\\b",
+    "business case for sustainability": "\\bbusiness case for sustainability\\b",
+    "integral sustainability": "\\bintegral sustainability\\b",
+    "integrated sustainability": "\\bintegrated sustainability\\b",
+    "sustainability maturity": "\\bsustainability maturity\\b",
+    "true sustainability": "\\btrue sustainability\\b"
+   }
+  }
+ },
+ "sustainability_pattern": "\\bsustainab\\w*"
+}
