@@ -69,6 +69,13 @@
   .controls select { padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
   .pill { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: .4rem .85rem; font-size: .88rem; cursor: pointer; }
   .pill.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .filters { gap: .5rem .9rem; }
+  .filters label { display: inline-flex; align-items: center; gap: .35rem; font-size: .82rem; color: var(--muted); }
+  .filters select { color: var(--ink); font-size: .86rem; max-width: 15rem; }
+  @media (max-width: 680px) {
+    .filters label { flex: 1 1 100%; min-width: 0; justify-content: space-between; }
+    .filters select { flex: 1 1 auto; width: 0; min-width: 0; max-width: none; }
+  }
   .showing { font-size: .88rem; color: var(--muted); margin: 0 0 .8rem; }
   .linkbtn { background: none; border: none; color: var(--accent); padding: 0; cursor: pointer; font-size: .88rem; text-decoration: underline; }
 
@@ -139,11 +146,22 @@
     <input type="search" id="q" placeholder="Search titles, authors, journals" aria-label="Search">
     <button class="pill" id="f-new" type="button">New this week</button>
     <button class="pill" id="f-watched" type="button">Watched authors</button>
-    <select id="sort" aria-label="Sort">
+  </div>
+  <div class="controls filters">
+    <label>Journal <select id="f-journal"><option value="">All journals</option></select></label>
+    <label>Year <select id="f-year"><option value="">All years</option></select></label>
+    <label>Quartile <select id="f-q"><option value="">All</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="other">Q3, Q4 or unranked</option></select></label>
+    <label>Relevance <select id="f-score"><option value="0">Any</option><option value="4">4 or more</option><option value="5">5 or more</option><option value="6">6 or more</option><option value="8">8 or more</option></select></label>
+    <label>Type <select id="f-type"><option value="">Articles and reviews</option><option value="article">Articles only</option><option value="review">Reviews only</option></select></label>
+    <label>Sort <select id="sort">
       <option value="added">Newest added</option>
-      <option value="published">Publication date</option>
-      <option value="score">Relevance</option>
-    </select>
+      <option value="published">Newest published</option>
+      <option value="oldest">Oldest published</option>
+      <option value="score">Most relevant</option>
+      <option value="theories">Most theories matched</option>
+      <option value="journal">Journal, A to Z</option>
+    </select></label>
+    <button class="linkbtn" type="button" id="reset">Clear filters</button>
   </div>
   <p class="showing" id="showing"></p>
   <div id="list"></div>
@@ -151,7 +169,7 @@
   <section class="about">
     <details>
       <summary>How this works</summary>
-      <p>Every Monday a script on GitHub queries <a href="https://openalex.org">OpenAlex</a> for articles and reviews published in the journals on the allow-list, querying each journal ISSN separately and looking back 45 days so late-indexed articles are caught. Each article gets a relevance score from 0 to 10, where 10 is most relevant. Core concepts in the title count most and core concepts in the abstract or keywords count next. Breadth across topic categories adds a little, purely weak-sustainability or ESG framing is penalized, and each matched matrix theory adds 0.75, up to 1.5. Articles scoring <span id="thr">3</span> or more join the list.</p>
+      <p>Every Monday a script on GitHub queries <a href="https://openalex.org">OpenAlex</a> for articles and reviews published in the journals on the allow-list, querying each journal ISSN separately and looking back 45 days so late-indexed articles are caught. The list goes back to articles published from 1 January 2020. Each article gets a relevance score from 0 to 10, where 10 is most relevant. Core concepts in the title count most and core concepts in the abstract or keywords count next. Breadth across topic categories adds a little, purely weak-sustainability or ESG framing is penalized, and each matched matrix theory adds 0.75, up to 1.5. Articles scoring <span id="thr">3</span> or more join the list.</p>
       <p>An article is linked to a theory when its title, abstract or keywords use that theory's distinctive language, or when its reference list cites one of the theory's anchor works from the sustainability matrix article. The reason is shown under each article. Matching is by keywords and citations, not by reading, so treat the links as leads to check.</p>
       <p>The settings live on GitHub in three files, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/journals.json">journal list</a>, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/theories.json">theories and anchor works</a>, and the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/scoring.json">scoring dictionary</a>. The full data is in <a href="data/articles.json">articles.json</a>.</p>
     </details>
@@ -169,7 +187,8 @@
 <script>
 (function () {
   "use strict";
-  var state = { theory: null, q: "", onlyNew: false, onlyWatched: false, sort: "added" };
+  var state = { theory: null, q: "", onlyNew: false, onlyWatched: false, sort: "added",
+    journal: "", year: "", quartile: "", minScore: 0, type: "" };
   var data = { articles: [], runs: [], theories: [], journals: [], byId: {} };
   var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var MONTHS_LONG = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -208,6 +227,14 @@
       }
       if (state.onlyNew && !isNew(a)) return false;
       if (state.onlyWatched && !(a.watched && a.watched.length)) return false;
+      if (state.journal && a.journal_id !== state.journal) return false;
+      if (state.year && (a.published || "").slice(0, 4) !== state.year) return false;
+      if (state.quartile) {
+        var qt = a.quartile || "";
+        if (state.quartile === "other" ? (qt === "Q1" || qt === "Q2") : qt !== state.quartile) return false;
+      }
+      if (state.minScore && a.score < state.minScore) return false;
+      if (state.type && a.type !== state.type) return false;
       if (q) {
         var hay = (a.title + " " + a.authors.join(" ") + " " + a.journal).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
@@ -215,10 +242,14 @@
       return true;
     });
     var key = state.sort;
+    function byPub(x, y) { return y.published > x.published ? 1 : y.published < x.published ? -1 : 0; }
     list.sort(function (x, y) {
-      if (key === "score") return (y.score - x.score) || (y.published > x.published ? 1 : -1);
-      if (key === "published") return (y.published > x.published ? 1 : y.published < x.published ? -1 : 0);
-      return (y.added > x.added ? 1 : y.added < x.added ? -1 : 0) || (y.published > x.published ? 1 : -1);
+      if (key === "score") return (y.score - x.score) || byPub(x, y);
+      if (key === "published") return byPub(x, y);
+      if (key === "oldest") return byPub(y, x);
+      if (key === "theories") return ((y.theories || []).length - (x.theories || []).length) || (y.score - x.score);
+      if (key === "journal") return x.journal.localeCompare(y.journal) || byPub(x, y);
+      return (y.added > x.added ? 1 : y.added < x.added ? -1 : 0) || byPub(x, y);
     });
     return list;
   }
@@ -228,9 +259,9 @@
     var total = data.articles.length;
     if (!r) { $("status").innerHTML = "The first sweep has not run yet."; return; }
     var newN = data.articles.filter(isNew).length;
-    var first = data.runs[0];
+    var from = data.runs.reduce(function (m, x) { return x.since < m ? x.since : m; }, data.runs[0].since);
     var parts = ["Last sweep <b>" + esc(fmtDate(r.date, true)) + "</b>",
-      "<b>" + total + "</b> articles since " + esc(fmtDate(first.since, true))];
+      "<b>" + total + "</b> articles since " + esc(fmtDate(from, true))];
     if (r.backfill) parts.push("first sweep, back-filled");
     else parts.push("<b>" + newN + "</b> new this week");
     $("status").innerHTML = parts.join(" · ");
@@ -342,6 +373,31 @@
   $("f-new").onclick = function () { state.onlyNew = !state.onlyNew; this.classList.toggle("on", state.onlyNew); renderList(); };
   $("f-watched").onclick = function () { state.onlyWatched = !state.onlyWatched; this.classList.toggle("on", state.onlyWatched); renderList(); };
   $("sort").onchange = function (e) { state.sort = e.target.value; renderList(); };
+  [["f-journal", "journal"], ["f-year", "year"], ["f-q", "quartile"], ["f-score", "minScore"], ["f-type", "type"]].forEach(function (p) {
+    $(p[0]).onchange = function (e) { state[p[1]] = p[1] === "minScore" ? Number(e.target.value) : e.target.value; renderList(); };
+  });
+  $("reset").onclick = function () {
+    state.theory = null; state.q = ""; state.onlyNew = false; state.onlyWatched = false;
+    state.journal = ""; state.year = ""; state.quartile = ""; state.minScore = 0; state.type = "";
+    $("q").value = ""; $("f-new").classList.remove("on"); $("f-watched").classList.remove("on");
+    $("f-journal").value = ""; $("f-year").value = ""; $("f-q").value = ""; $("f-score").value = "0"; $("f-type").value = "";
+    render();
+  };
+
+  function populateFilters() {
+    var jc = {}, yc = {};
+    data.articles.forEach(function (a) {
+      jc[a.journal_id] = (jc[a.journal_id] || 0) + 1;
+      var y = (a.published || "").slice(0, 4);
+      if (y) yc[y] = (yc[y] || 0) + 1;
+    });
+    $("f-journal").innerHTML = '<option value="">All journals</option>' + data.journals
+      .filter(function (j) { return jc[j.id]; })
+      .sort(function (a, b) { return a.name.localeCompare(b.name); })
+      .map(function (j) { return '<option value="' + esc(j.id) + '">' + esc(j.name) + " (" + jc[j.id] + ")</option>"; }).join("");
+    $("f-year").innerHTML = '<option value="">All years</option>' + Object.keys(yc).sort().reverse()
+      .map(function (y) { return '<option value="' + esc(y) + '">' + esc(y) + " (" + yc[y] + ")</option>"; }).join("");
+  }
 
   Promise.all([
     getJSON("data/articles.json").catch(function () { return []; }),
@@ -354,6 +410,7 @@
     data.theories = (res[2] && res[2].theories) || [];
     data.journals = (res[3] && res[3].journals) || [];
     data.theories.forEach(function (t) { data.byId[t.id] = t; });
+    populateFilters();
     render();
     renderAbout();
   }).catch(function (err) {

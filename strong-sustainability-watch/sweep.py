@@ -106,12 +106,14 @@ class OpenAlex:
                 raise ApiError(f"Network error for {safe_url}: {e}") from None
         raise ApiError(f"Gave up on {safe_url}")
 
-    def works_for_issn(self, issn, since):
+    def works_for_issn(self, issn, since, until=None):
         out, cursor, pages = [], "*", 0
+        flt = f"locations.source.issn:{issn},from_publication_date:{since}"
+        if until:
+            flt += f",to_publication_date:{until}"
         while cursor and pages < MAX_PAGES:
             res = self.get("/works", {
-                "filter": f"locations.source.issn:{issn},from_publication_date:{since}",
-                "select": SELECT, "per_page": PAGE_SIZE, "cursor": cursor})
+                "filter": flt, "select": SELECT, "per_page": PAGE_SIZE, "cursor": cursor})
             pages += 1
             if not res:
                 break
@@ -232,6 +234,17 @@ class TheoryMatcher:
         return tags
 
 
+def year_chunks(since, today):
+    """Split a long window into calendar years so big journals stay under the page cap.
+    The last chunk has no end date, so articles dated ahead of today are still caught."""
+    chunks, start = [], since
+    while start.year < today.year:
+        chunks.append((start, dt.date(start.year, 12, 31)))
+        start = dt.date(start.year + 1, 1, 1)
+    chunks.append((start, None))
+    return chunks
+
+
 def watched_hits(authors, surnames):
     hits = []
     for s in surnames:
@@ -308,14 +321,17 @@ def run(oa, today=None, log=print):
     keep_types = set(scoring.get("keep_types", ["article", "review"]))
 
     # 2. Window: from the last good sweep minus the lookback, or the backfill date.
+    #    If backfill_from is moved earlier than anything swept so far, sweep back to it once.
     good = [r for r in runs if r.get("ok")]
     backfill_from = dt.date.fromisoformat(scoring["backfill_from"])
-    if good:
+    covered_from = min((dt.date.fromisoformat(r["since"]) for r in good), default=None)
+    if not good or backfill_from < covered_from:
+        since, backfill = backfill_from, True
+    else:
         last = dt.date.fromisoformat(good[-1]["date"])
         since = max(backfill_from, last - dt.timedelta(days=int(scoring["lookback_days"])))
         backfill = False
-    else:
-        since, backfill = backfill_from, True
+    chunks = year_chunks(since, today)
 
     # 3. Sweep every ISSN of every journal separately (pipe-OR filters proved unreliable).
     known_ids = {a["id"] for a in articles}
@@ -324,10 +340,13 @@ def run(oa, today=None, log=print):
     for j in journals:
         for issn in j["issns"]:
             issns += 1
-            works, was_capped = oa.works_for_issn(issn, since.isoformat())
+            works = []
+            for start, end in chunks:
+                part, was_capped = oa.works_for_issn(issn, start.isoformat(), end.isoformat() if end else None)
+                works.extend(part)
+                if was_capped:
+                    capped.append(f"{j['name']} ({issn}, from {start.isoformat()})")
             retrieved += len(works)
-            if was_capped:
-                capped.append(f"{j['name']} ({issn})")
             for w in works:
                 wid = short_id(w.get("id"))
                 if not wid or wid in processed:

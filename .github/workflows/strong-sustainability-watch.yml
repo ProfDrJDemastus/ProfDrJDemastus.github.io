@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 5 * * 1"   # Mondays 05:17 UTC
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:   # rerun whenever the sweep itself changes
+      - "strong-sustainability-watch/config/**"
+      - "strong-sustainability-watch/sweep.py"
+      - ".github/workflows/strong-sustainability-watch.yml"
 
 permissions:
   contents: write
@@ -16,7 +22,7 @@ concurrency:
 jobs:
   sweep:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 

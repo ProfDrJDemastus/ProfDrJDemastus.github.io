@@ -1,7 +1,7 @@
 {
  "note": "Relevance scoring, carried over from the Strong Sustainability Watch HTML tool and tightened for an unattended list. Plain terms match whole words, case-insensitive, and a hyphen also matches a space or no space. Terms starting with re: are raw regular expressions.",
  "threshold": 3.0,
- "backfill_from": "2026-01-01",
+ "backfill_from": "2020-01-01",
  "lookback_days": 45,
  "keep_types": ["article", "review"],
  "dictionary": {

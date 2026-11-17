@@ -8,7 +8,7 @@ Page: https://profdrjdemastus.github.io/strong-sustainability-watch/
 
 The workflow `.github/workflows/strong-sustainability-watch.yml` runs `sweep.py` every Monday at 05:17 UTC and can also be started by hand from the Actions tab. The script needs a free OpenAlex API key stored as the repository secret `OPENALEX_API_KEY`.
 
-Each sweep queries OpenAlex for articles and reviews in every ISSN of every journal in `config/journals.json`, looking back 45 days from the previous sweep so late-indexed articles are caught. The first sweep back-fills from the date in `config/scoring.json`.
+Each sweep queries OpenAlex for articles and reviews in every ISSN of every journal in `config/journals.json`, looking back 45 days from the previous sweep so late-indexed articles are caught. The first sweep back-fills from the date in `config/scoring.json`, currently 1 January 2020. Moving that date earlier makes the next sweep reach back to it once, in one-year pieces.
 
 ## Relevance
 
