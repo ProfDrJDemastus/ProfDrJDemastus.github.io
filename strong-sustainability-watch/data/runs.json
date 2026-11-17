@@ -1,1 +1,19 @@
-[]
+[
+ {
+  "date": "2026-11-17",
+  "since": "2026-01-01",
+  "backfill": true,
+  "ok": true,
+  "journals": 32,
+  "issns": 57,
+  "requests": 169,
+  "retrieved": 20271,
+  "unique": 12254,
+  "evaluated": 11875,
+  "added": 105,
+  "total": 105,
+  "capped": [],
+  "anchors_resolved": "32 of 32",
+  "threshold": 3.0
+ }
+]
