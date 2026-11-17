@@ -1,1 +1,30 @@
-[]
+[
+ {
+  "date": "2026-11-17",
+  "first_run": true,
+  "ok": true,
+  "requests": 493,
+  "retrieved": 2255,
+  "records": 614,
+  "core": 76,
+  "adjacent": 538,
+  "new": 0,
+  "per_journal": {
+   "bas": 5,
+   "bse": 161,
+   "ce": 3,
+   "ctep": 8,
+   "csrem": 101,
+   "jclp": 187,
+   "jeem": 8,
+   "jem": 76,
+   "oae": 12,
+   "srj": 15,
+   "jri": 3,
+   "sampj": 31,
+   "tm": 4
+  },
+  "issns_with_no_results": [],
+  "capped": []
+ }
+]
