@@ -1,0 +1,171 @@
+{
+ "source": "Demastus, J. Mapping sustainability theories in a two-axis typology (Article 10, Figure 1). Strong-side quadrants only.",
+ "how_matching_works": "An article is linked to a theory when its title, abstract or keywords match one of the theory's phrases (patterns), when two required ideas appear together (context pairs), or when its reference list cites one of the theory's anchor works. Patterns are case-insensitive regular expressions.",
+ "quadrants": {
+  "macro-strong": "Macro level, strong sustainability",
+  "micro-strong": "Micro level, strong sustainability"
+ },
+ "theories": [
+  {
+   "id": "ecological-economics",
+   "name": "Ecological economics",
+   "quadrant": "macro-strong",
+   "cite": "Costanza 1991; Daly 1977",
+   "patterns": ["\\becological econom(y|ics)\\b", "\\bcritical natural capital\\b", "\\bnon-?substitutab\\w*", "\\bstrong sustainability\\b", "\\bweak sustainability\\b"],
+   "context": [["\\bsubstitutab\\w*", "\\bnatural capital\\b"]],
+   "anchors": [
+    {"doi": "10.1177/096327199500400103", "label": "Daly 1995"},
+    {"doi": "10.1016/S0921-8009(02)00272-0", "label": "Ekins et al. 2003"},
+    {"doi": "10.3197/0963271054084966", "label": "Figge 2005"},
+    {"doi": "10.1016/j.ecolecon.2015.02.006", "label": "Pelenc & Ballet 2015"},
+    {"doi": "10.4324/9781351173643", "label": "Bonnedahl & Heikkurinen 2018"}
+   ]
+  },
+  {
+   "id": "planetary-boundaries",
+   "name": "Planetary boundaries",
+   "quadrant": "macro-strong",
+   "cite": "Rockström et al. 2009; Steffen et al. 2015",
+   "patterns": ["\\bplanetary boundar\\w*", "\\bsafe operating space\\b", "\\bearth[- ]system boundar\\w*", "\\bsafe and just (earth|corridor)\\w*"],
+   "context": [],
+   "anchors": [
+    {"doi": "10.1038/461472a", "label": "Rockström et al. 2009"},
+    {"doi": "10.5751/ES-03180-140232", "label": "Rockström et al. 2009 (Ecology & Society)"},
+    {"doi": "10.1126/science.1259855", "label": "Steffen et al. 2015"},
+    {"doi": "10.1126/sciadv.adh2458", "label": "Richardson et al. 2023"},
+    {"doi": "10.1038/s41586-023-06083-8", "label": "Rockström et al. 2023"},
+    {"doi": "10.1038/s41893-023-01255-w", "label": "Bai et al. 2024"}
+   ]
+  },
+  {
+   "id": "doughnut-economics",
+   "name": "Doughnut economics",
+   "quadrant": "macro-strong",
+   "cite": "Raworth 2017",
+   "patterns": ["\\bdoughnut\\b", "\\bsafe and just space\\b"],
+   "context": [["\\bsocial foundations?\\b", "\\becological ceilings?\\b"]],
+   "anchors": [
+    {"doi": "10.1016/S2542-5196(17)30028-1", "label": "Raworth 2017"}
+   ]
+  },
+  {
+   "id": "steady-state-economics",
+   "name": "Steady-state economics",
+   "quadrant": "macro-strong",
+   "cite": "Daly 1977, 1996",
+   "patterns": ["\\bsteady[- ]state (econom|societ)\\w*", "\\buneconomic growth\\b", "\\bfull[- ]world econom\\w*"],
+   "context": [],
+   "anchors": []
+  },
+  {
+   "id": "degrowth",
+   "name": "Degrowth",
+   "quadrant": "macro-strong",
+   "cite": "Latouche 2009; Kallis 2018",
+   "patterns": ["\\bde-?growth\\b", "\\bpost-?growth\\b"],
+   "context": [],
+   "anchors": [
+    {"doi": "10.3197/096327113X13581561725356", "label": "Alexander 2013"},
+    {"doi": "10.1007/s11625-015-0321-9", "label": "Asara et al. 2015"},
+    {"doi": "10.3197/096327118X15217309300822", "label": "Eversberg & Schmelzer 2018"},
+    {"doi": "10.1111/ijmr.70033", "label": "Narciso et al. 2026"}
+   ]
+  },
+  {
+   "id": "circular-society",
+   "name": "Circular society (strong circularity)",
+   "quadrant": "macro-strong",
+   "cite": "Calisto Friant et al. 2020; Schröder et al. 2019",
+   "patterns": ["\\bcircular societ\\w*", "\\bstrong circular\\w*", "\\bsufficiency[- ](based|oriented|driven) circular\\w*"],
+   "context": [["\\bcircular(ity| econom\\w*)", "((?<!self-)(?<!self )\\bsufficiency\\b|\\bde-?growth\\b|\\bpost-?growth\\b|\\babsolute reductions?\\b|\\bplanetary boundar\\w*|\\blimits to growth\\b)"]],
+   "anchors": [
+    {"doi": "10.1016/j.resconrec.2020.104917", "label": "Calisto Friant et al. 2020"},
+    {"doi": "10.1016/j.resconrec.2019.03.038", "label": "Schröder et al. 2019"}
+   ]
+  },
+  {
+   "id": "coevolutionary-sustainability",
+   "name": "Coevolutionary sustainability",
+   "quadrant": "macro-strong",
+   "cite": "Norgaard 1994; Kallis & Norgaard 2010",
+   "patterns": ["\\bco-?evolutionary (sustainab|econom|ecolog)\\w*"],
+   "context": [["\\bco-?evolution\\w*", "\\b(socio-ecological|social-ecological|ecosystems?|biosphere|ecological|nature)\\b"]],
+   "anchors": [
+    {"doi": "10.1016/j.ecolecon.2009.09.017", "label": "Kallis & Norgaard 2010"}
+   ]
+  },
+  {
+   "id": "ecological-embeddedness",
+   "name": "Ecological embeddedness",
+   "quadrant": "micro-strong",
+   "cite": "Whiteman & Cooper 2000",
+   "patterns": ["\\becological(ly)? embedded(ness)?\\b", "\\bembeddedness in (nature|the natural environment|ecosystems?|the biosphere)\\b"],
+   "context": [],
+   "anchors": [
+    {"doi": "10.2307/1556349", "label": "Whiteman & Cooper 2000"}
+   ]
+  },
+  {
+   "id": "strongly-sustainable-business-models",
+   "name": "Strongly sustainable business models",
+   "quadrant": "micro-strong",
+   "cite": "Upward & Jones 2016",
+   "patterns": ["\\bstrongly sustainable (business|firm|enterprise|organi[sz]ation|compan)\\w*", "\\bstrong sustainability business models?\\b"],
+   "context": [["\\bflourish\\w*", "\\bbusiness models?\\b"]],
+   "anchors": [
+    {"doi": "10.1177/1086026615592933", "label": "Upward & Jones 2016"}
+   ]
+  },
+  {
+   "id": "regenerative-business",
+   "name": "Regenerative business",
+   "quadrant": "micro-strong",
+   "cite": "Hahn & Tampe 2021",
+   "patterns": ["\\bregenerative (business|organi[sz]\\w*|strateg\\w*|econom\\w*|enterprises?|firms?|compan\\w*|value|leadership|sustainability|development|practices?|transitions?|paradigm|capitalism)\\b"],
+   "context": [],
+   "anchors": [
+    {"doi": "10.1177/1476127020979228", "label": "Hahn & Tampe 2021"},
+    {"doi": "10.1016/j.spc.2024.06.015", "label": "Das & Bocken 2024"}
+   ]
+  },
+  {
+   "id": "corporate-biosphere-stewardship",
+   "name": "Corporate biosphere stewardship",
+   "quadrant": "micro-strong",
+   "cite": "Österblom et al. 2017; Folke et al. 2019",
+   "patterns": ["\\bbiosphere stewardship\\b", "\\bstewardship of the biosphere\\b", "\\bkeystone (actor|corporation|compan|firm)\\w*", "\\bocean stewardship\\b", "\\bseabos\\b"],
+   "context": [],
+   "anchors": [
+    {"doi": "10.1038/s41559-019-0978-z", "label": "Folke et al. 2019"},
+    {"doi": "10.1073/pnas.1704453114", "label": "Österblom et al. 2017"}
+   ]
+  },
+  {
+   "id": "absolute-biophysical-accounting",
+   "name": "Absolute biophysical accounting approaches",
+   "quadrant": "micro-strong",
+   "cite": "Whiteman et al. 2013; McElroy & van Engelen 2012; Bjørn et al. 2016",
+   "patterns": ["\\babsolute (environmental )?sustainab\\w*", "\\bcontext[- ]based sustainab\\w*", "\\bscience[- ]based targets?\\b", "\\bsharing principles?\\b", "\\bdownscal\\w* (the )?planetary boundar\\w*"],
+   "context": [["\\b(planetary boundar\\w*|safe operating space|carrying capacit\\w*|earth[- ]system boundar\\w*)", "\\b(assess\\w*|accounting|allocat\\w*|downscal\\w*|footprints?|life[- ]cycle|lca|share of|budgets?|targets?)\\b"]],
+   "anchors": [
+    {"doi": "10.1111/j.1467-6486.2012.01073.x", "label": "Whiteman et al. 2013"},
+    {"doi": "10.1016/j.ecolind.2015.11.046", "label": "Bjørn et al. 2016"}
+   ]
+  },
+  {
+   "id": "sufficiency-post-growth-organizing",
+   "name": "Sufficiency-oriented business models / post-growth organizing",
+   "quadrant": "micro-strong",
+   "cite": "Bocken & Short 2016",
+   "patterns": ["\\bsufficiency[- ](oriented|driven|based|focused)\\b", "\\b(post|de)-?growth (organi[sz]\\w*|business\\w*|enterprises?|firms?|compan\\w*|management|entrepreneur\\w*)\\b", "\\bnot[- ]for[- ]growth\\b"],
+   "context": [["((?<!self-)(?<!self )\\bsufficiency\\b|\\bde-?growth\\b|\\bpost-?growth\\b)", "\\b(business models?|firms?|compan\\w*|enterprises?|organi[sz]ations?|smes?|entrepreneur\\w*|corporat\\w*)\\b"]],
+   "anchors": [
+    {"doi": "10.1016/j.eist.2015.07.010", "label": "Bocken & Short 2016"},
+    {"doi": "10.1002/bse.2440", "label": "Brozovic 2020"},
+    {"doi": "10.1002/bse.70973", "label": "Gossen et al. 2026"},
+    {"doi": "10.1016/j.jclepro.2025.145614", "label": "Nesterova et al. 2025"},
+    {"doi": "10.1007/s11625-025-01760-1", "label": "Niessen & Bocken 2026"}
+   ]
+  }
+ ]
+}

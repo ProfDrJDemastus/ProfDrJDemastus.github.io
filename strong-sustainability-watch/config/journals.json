@@ -1,0 +1,318 @@
+{
+ "note": "Allow-list of journals swept each week. Quartiles are seeded estimates; verify against SCImago before citing.",
+ "journals": [
+  {
+   "id": "bse",
+   "name": "Business Strategy and the Environment",
+   "issns": [
+    "0964-4733",
+    "1099-0836"
+   ],
+   "quartile": "Q1",
+   "field": "Business / Sustainability"
+  },
+  {
+   "id": "ee",
+   "name": "Ecological Economics",
+   "issns": [
+    "0921-8009"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability / Economics"
+  },
+  {
+   "id": "oae",
+   "name": "Organization & Environment",
+   "issns": [
+    "1086-0266",
+    "1552-7417"
+   ],
+   "quartile": "Q1",
+   "field": "Business / Sustainability"
+  },
+  {
+   "id": "ss",
+   "name": "Sustainability Science",
+   "issns": [
+    "1862-4065",
+    "1862-4057"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability"
+  },
+  {
+   "id": "jbe",
+   "name": "Journal of Business Ethics",
+   "issns": [
+    "0167-4544",
+    "1573-0697"
+   ],
+   "quartile": "Q1",
+   "field": "Business"
+  },
+  {
+   "id": "sd",
+   "name": "Sustainable Development",
+   "issns": [
+    "0968-0802",
+    "1099-1719"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability"
+  },
+  {
+   "id": "csrem",
+   "name": "Corporate Social Responsibility and Environmental Management",
+   "issns": [
+    "1535-3958",
+    "1535-3966"
+   ],
+   "quartile": "Q1",
+   "field": "Business / Sustainability"
+  },
+  {
+   "id": "gec",
+   "name": "Global Environmental Change",
+   "issns": [
+    "0959-3780"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability"
+  },
+  {
+   "id": "bas",
+   "name": "Business & Society",
+   "issns": [
+    "0007-6503",
+    "1552-4205"
+   ],
+   "quartile": "Q1",
+   "field": "Business"
+  },
+  {
+   "id": "spc",
+   "name": "Sustainable Production and Consumption",
+   "issns": [
+    "2352-5509"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability"
+  },
+  {
+   "id": "ev",
+   "name": "Environmental Values",
+   "issns": [
+    "0963-2719",
+    "1752-7015"
+   ],
+   "quartile": "Q2",
+   "field": "Sustainability"
+  },
+  {
+   "id": "os",
+   "name": "Organization Studies",
+   "issns": [
+    "0170-8406",
+    "1741-3044"
+   ],
+   "quartile": "Q1",
+   "field": "Business"
+  },
+  {
+   "id": "jms",
+   "name": "Journal of Management Studies",
+   "issns": [
+    "0022-2380",
+    "1467-6486"
+   ],
+   "quartile": "Q1",
+   "field": "Business"
+  },
+  {
+   "id": "tech",
+   "name": "Technovation",
+   "issns": [
+    "0166-4972"
+   ],
+   "quartile": "Q1",
+   "field": "Innovation / Business"
+  },
+  {
+   "id": "jclp",
+   "name": "Journal of Cleaner Production",
+   "issns": [
+    "0959-6526"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability (high volume)"
+  },
+  {
+   "id": "jbr",
+   "name": "Journal of Business Research",
+   "issns": [
+    "0148-2963"
+   ],
+   "quartile": "Q1",
+   "field": "Business (high volume)"
+  },
+  {
+   "id": "bsr",
+   "name": "Business and Society Review",
+   "issns": [
+    "0045-3609",
+    "1467-8594"
+   ],
+   "quartile": "Q3",
+   "field": "Business"
+  },
+  {
+   "id": "beer",
+   "name": "Business Ethics, the Environment & Responsibility",
+   "issns": [
+    "2694-6424",
+    "2694-6432",
+    "0962-8770",
+    "1467-8608"
+   ],
+   "quartile": "Q1",
+   "field": "Business / Ethics"
+  },
+  {
+   "id": "bsd",
+   "name": "Business Strategy and Development",
+   "issns": [
+    "2572-3170"
+   ],
+   "quartile": "Q2",
+   "field": "Business / Sustainability"
+  },
+  {
+   "id": "ce",
+   "name": "Clean Energy",
+   "issns": [
+    "2515-4230",
+    "2515-396X"
+   ],
+   "quartile": "Q2",
+   "field": "Energy / Sustainability"
+  },
+  {
+   "id": "ctep",
+   "name": "Clean Technologies and Environmental Policy",
+   "issns": [
+    "1618-954X",
+    "1618-9558"
+   ],
+   "quartile": "Q2",
+   "field": "Sustainability / Policy"
+  },
+  {
+   "id": "dpm",
+   "name": "Disaster Prevention and Management",
+   "issns": [
+    "0965-3562",
+    "1758-6100"
+   ],
+   "quartile": "Q2",
+   "field": "Management / Policy"
+  },
+  {
+   "id": "gf",
+   "name": "Green Finance",
+   "issns": [
+    "2643-1092"
+   ],
+   "quartile": "Q2",
+   "field": "Finance / Sustainability"
+  },
+  {
+   "id": "jeem",
+   "name": "Journal of Environmental Economics and Management",
+   "issns": [
+    "0095-0696",
+    "1096-0449"
+   ],
+   "quartile": "Q1",
+   "field": "Economics / Environment"
+  },
+  {
+   "id": "jem",
+   "name": "Journal of Environmental Management",
+   "issns": [
+    "0301-4797",
+    "1095-8630"
+   ],
+   "quartile": "Q1",
+   "field": "Sustainability (high volume)"
+  },
+  {
+   "id": "jgr",
+   "name": "Journal of Global Responsibility",
+   "issns": [
+    "2041-2568",
+    "2041-2576"
+   ],
+   "quartile": "Q3",
+   "field": "Business / Sustainability"
+  },
+  {
+   "id": "jsfi",
+   "name": "Journal of Sustainable Finance & Investment",
+   "issns": [
+    "2043-0795",
+    "2043-0809"
+   ],
+   "quartile": "Q2",
+   "field": "Finance / Sustainability"
+  },
+  {
+   "id": "risus",
+   "name": "RISUS - Journal on Innovation and Sustainability",
+   "issns": [
+    "2179-3565"
+   ],
+   "quartile": "Q4",
+   "field": "Innovation / Sustainability"
+  },
+  {
+   "id": "spp",
+   "name": "Science and Public Policy",
+   "issns": [
+    "0302-3427",
+    "1471-5430"
+   ],
+   "quartile": "Q1",
+   "field": "Policy / Science studies"
+  },
+  {
+   "id": "srj",
+   "name": "Social Responsibility Journal",
+   "issns": [
+    "1747-1117",
+    "1758-857X"
+   ],
+   "quartile": "Q2",
+   "field": "Business / CSR"
+  },
+  {
+   "id": "sampj",
+   "name": "Sustainability Accounting, Management and Policy Journal",
+   "issns": [
+    "2040-8021",
+    "2040-803X"
+   ],
+   "quartile": "Q1",
+   "field": "Accounting / Sustainability"
+  },
+  {
+   "id": "wjemsd",
+   "name": "World Journal of Entrepreneurship, Management and Sustainable Development",
+   "issns": [
+    "2042-5961",
+    "2042-597X"
+   ],
+   "quartile": "Q3",
+   "field": "Entrepreneurship / Sustainability"
+  }
+ ]
+}

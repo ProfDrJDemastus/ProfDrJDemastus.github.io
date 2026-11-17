@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strong Sustainability Watch</title>
+<meta name="description" content="New articles on strong sustainability in business and sustainability journals, matched to the theories of the sustainability matrix. Updated weekly.">
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --ink: #14202b;
+    --muted: #5b6b78;
+    --faint: #8a98a3;
+    --line: #d7dee4;
+    --accent: #0b6e99;
+    --macro: #24684a;
+    --macro-soft: #e4f1e9;
+    --micro: #0b6e99;
+    --micro-soft: #e2eff6;
+    --weak-soft: #eef1f3;
+    --new: #a15c00;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .4rem; line-height: 1.2; }
+  .lede { color: var(--muted); margin: 0 0 .6rem; max-width: 46rem; }
+  .status { font-size: .9rem; color: var(--muted); margin: 0 0 1.6rem; }
+  .status b { color: var(--ink); font-weight: 600; }
+  a { color: var(--accent); }
+  button, input, select { font: inherit; color: inherit; }
+
+  /* matrix */
+  .matrix-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.1rem 1rem; margin-bottom: 1.4rem; }
+  .matrix-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .8rem; }
+  .matrix-head h2 { font-size: 1.05rem; margin: 0; }
+  .matrix-head p { margin: 0; font-size: .85rem; color: var(--muted); }
+  .matrix { display: grid; grid-template-columns: 7.5rem 1fr 1.6fr; gap: 6px; }
+  .mx-col { font-size: .78rem; color: var(--muted); text-align: center; padding: .1rem .4rem .3rem; line-height: 1.3; }
+  .mx-col b { color: var(--ink); font-weight: 600; display: block; font-size: .85rem; }
+  .mx-row { font-size: .78rem; color: var(--muted); display: flex; flex-direction: column; justify-content: center; padding-right: .3rem; line-height: 1.3; }
+  .mx-row b { color: var(--ink); font-weight: 600; font-size: .85rem; }
+  .cell { border-radius: 10px; padding: .55rem; min-height: 6rem; }
+  .cell.weak { background: var(--weak-soft); color: var(--faint); font-size: .82rem; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; }
+  .cell.macro { background: var(--macro-soft); }
+  .cell.micro { background: var(--micro-soft); }
+  .cell .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tchip { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid transparent; background: var(--panel); border-radius: 999px; padding: .28rem .7rem .28rem .75rem; font-size: .84rem; cursor: pointer; line-height: 1.25; text-align: left; }
+  .cell.macro .tchip { color: var(--macro); border-color: #c4dece; }
+  .cell.micro .tchip { color: var(--micro); border-color: #c3dbe8; }
+  .tchip .n { font-variant-numeric: tabular-nums; font-size: .78rem; font-weight: 600; opacity: .8; }
+  .tchip.zero { opacity: .55; }
+  .tchip:hover { border-color: currentColor; }
+  .tchip.on { color: #fff !important; }
+  .cell.macro .tchip.on { background: var(--macro); border-color: var(--macro); }
+  .cell.micro .tchip.on { background: var(--micro); border-color: var(--micro); }
+  .tchip.on .n { opacity: 1; }
+
+  /* controls */
+  .controls { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin-bottom: 1rem; }
+  .controls input[type=search] { flex: 1 1 16rem; min-width: 0; padding: .55rem .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+  .controls select { padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+  .pill { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: .4rem .85rem; font-size: .88rem; cursor: pointer; }
+  .pill.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .showing { font-size: .88rem; color: var(--muted); margin: 0 0 .8rem; }
+  .linkbtn { background: none; border: none; color: var(--accent); padding: 0; cursor: pointer; font-size: .88rem; text-decoration: underline; }
+
+  /* cards */
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.15rem; }
+  .card + .card { margin-top: .75rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: .35rem .8rem; align-items: center; font-size: .82rem; color: var(--muted); }
+  .meta .j { color: var(--ink); font-weight: 600; }
+  .badge { font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border-radius: 6px; padding: .1rem .4rem; }
+  .badge.new { color: var(--new); border: 1px solid var(--new); }
+  .badge.q { background: var(--weak-soft); color: var(--ink); }
+  .score { margin-left: auto; font-size: .8rem; color: var(--muted); white-space: nowrap; }
+  .score b { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .card h3 { font-size: 1.05rem; line-height: 1.35; margin: .35rem 0 .25rem; }
+  .card h3 a { color: var(--ink); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); text-decoration: underline; }
+  .authors { font-size: .88rem; color: var(--muted); margin: 0 0 .6rem; }
+  .authors b { color: var(--ink); font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: .45rem; }
+  .tag { font-size: .78rem; border-radius: 999px; padding: .15rem .6rem; }
+  .tag.macro-strong { background: var(--macro-soft); color: var(--macro); }
+  .tag.micro-strong { background: var(--micro-soft); color: var(--micro); }
+  .tag.none { background: var(--weak-soft); color: var(--faint); }
+  .why { margin: 0; padding: 0; list-style: none; font-size: .8rem; color: var(--muted); }
+  .why li + li { margin-top: .1rem; }
+  .why b { font-weight: 600; color: var(--ink); }
+  details.abs { margin-top: .5rem; font-size: .88rem; }
+  details.abs summary { cursor: pointer; color: var(--accent); font-size: .84rem; }
+  details.abs p { margin: .4rem 0 0; color: #2c3a46; }
+  .empty { background: var(--panel); border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem 1.2rem; text-align: center; color: var(--muted); }
+
+  /* footer */
+  .about { margin-top: 2.5rem; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: .2rem 1.15rem; }
+  .about details { padding: .8rem 0; }
+  .about details + details { border-top: 1px solid var(--line); }
+  .about summary { cursor: pointer; font-weight: 600; }
+  .about p, .about li { font-size: .9rem; color: #2c3a46; }
+  .tablewrap { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: .84rem; width: 100%; margin-top: .6rem; }
+  th, td { text-align: left; padding: .35rem .6rem .35rem 0; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  th { color: var(--muted); font-weight: 600; }
+
+  @media (max-width: 680px) {
+    main { padding-top: 1.6rem; }
+    h1 { font-size: 1.55rem; }
+    .matrix { grid-template-columns: 1fr; }
+    .mx-col, .mx-corner, .cell.weak { display: none; }
+    .mx-row { flex-direction: row; gap: .4rem; padding: .4rem 0 0; }
+    .score { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Strong Sustainability Watch</h1>
+  <p class="lede">New research on strong sustainability in 32 business and sustainability journals, linked to the strong-side theories of the sustainability matrix. A new sweep runs every Monday.</p>
+  <p class="status" id="status">Loading…</p>
+
+  <section class="matrix-wrap" aria-label="Sustainability matrix filter">
+    <div class="matrix-head">
+      <h2>Articles by theory</h2>
+      <p>Select a theory to filter the list. Counts cover the whole list.</p>
+    </div>
+    <div class="matrix" id="matrix"></div>
+  </section>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search titles, authors, journals" aria-label="Search">
+    <button class="pill" id="f-new" type="button">New this week</button>
+    <button class="pill" id="f-watched" type="button">Watched authors</button>
+    <select id="sort" aria-label="Sort">
+      <option value="added">Newest added</option>
+      <option value="published">Publication date</option>
+      <option value="score">Relevance</option>
+    </select>
+  </div>
+  <p class="showing" id="showing"></p>
+  <div id="list"></div>
+
+  <section class="about">
+    <details>
+      <summary>How this works</summary>
+      <p>Every Monday a script on GitHub queries <a href="https://openalex.org">OpenAlex</a> for articles and reviews published in the journals on the allow-list, querying each journal ISSN separately and looking back 45 days so late-indexed articles are caught. Each article gets a relevance score from 0 to 10, where 10 is most relevant. Core concepts in the title count most and core concepts in the abstract or keywords count next. Breadth across topic categories adds a little, purely weak-sustainability or ESG framing is penalized, and each matched matrix theory adds 0.75, up to 1.5. Articles scoring <span id="thr">3</span> or more join the list.</p>
+      <p>An article is linked to a theory when its title, abstract or keywords use that theory's distinctive language, or when its reference list cites one of the theory's anchor works from the sustainability matrix article. The reason is shown under each article. Matching is by keywords and citations, not by reading, so treat the links as leads to check.</p>
+      <p>The settings live on GitHub in three files, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/journals.json">journal list</a>, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/theories.json">theories and anchor works</a>, and the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/scoring.json">scoring dictionary</a>. The full data is in <a href="data/articles.json">articles.json</a>.</p>
+    </details>
+    <details>
+      <summary>Journals covered</summary>
+      <p id="journals"></p>
+    </details>
+    <details>
+      <summary>Search log</summary>
+      <div class="tablewrap" id="log"></div>
+    </details>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var state = { theory: null, q: "", onlyNew: false, onlyWatched: false, sort: "added" };
+  var data = { articles: [], runs: [], theories: [], journals: [], byId: {} };
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var MONTHS_LONG = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmtDate(iso, long) {
+    if (!iso) return "";
+    var p = iso.split("-");
+    if (p.length < 3) return iso;
+    return parseInt(p[2], 10) + " " + (long ? MONTHS_LONG : MONTHS)[parseInt(p[1], 10) - 1] + " " + p[0];
+  }
+  function getJSON(path) {
+    return fetch(path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error(path + " " + r.status);
+      return r.json();
+    });
+  }
+
+  function latestRun() { return data.runs.length ? data.runs[data.runs.length - 1] : null; }
+  function isNew(a) {
+    var r = latestRun();
+    return !!(r && !r.backfill && a.added === r.date);
+  }
+
+  function filtered() {
+    var q = state.q.trim().toLowerCase();
+    var list = data.articles.filter(function (a) {
+      if (state.theory) {
+        if (state.theory === "_none") { if (a.theories && a.theories.length) return false; }
+        else if (!(a.theories || []).some(function (t) { return t.id === state.theory; })) return false;
+      }
+      if (state.onlyNew && !isNew(a)) return false;
+      if (state.onlyWatched && !(a.watched && a.watched.length)) return false;
+      if (q) {
+        var hay = (a.title + " " + a.authors.join(" ") + " " + a.journal).toLowerCase();
+        if (hay.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+    var key = state.sort;
+    list.sort(function (x, y) {
+      if (key === "score") return (y.score - x.score) || (y.published > x.published ? 1 : -1);
+      if (key === "published") return (y.published > x.published ? 1 : y.published < x.published ? -1 : 0);
+      return (y.added > x.added ? 1 : y.added < x.added ? -1 : 0) || (y.published > x.published ? 1 : -1);
+    });
+    return list;
+  }
+
+  function renderStatus() {
+    var r = latestRun();
+    var total = data.articles.length;
+    if (!r) { $("status").innerHTML = "The first sweep has not run yet."; return; }
+    var newN = data.articles.filter(isNew).length;
+    var first = data.runs[0];
+    var parts = ["Last sweep <b>" + esc(fmtDate(r.date, true)) + "</b>",
+      "<b>" + total + "</b> articles since " + esc(fmtDate(first.since, true))];
+    if (r.backfill) parts.push("first sweep, back-filled");
+    else parts.push("<b>" + newN + "</b> new this week");
+    $("status").innerHTML = parts.join(" · ");
+  }
+
+  function renderMatrix() {
+    var counts = {}, none = 0;
+    data.articles.forEach(function (a) {
+      if (!a.theories || !a.theories.length) none++;
+      (a.theories || []).forEach(function (t) { counts[t.id] = (counts[t.id] || 0) + 1; });
+    });
+    function chips(quadrant) {
+      return data.theories.filter(function (t) { return t.quadrant === quadrant; }).map(function (t) {
+        var n = counts[t.id] || 0;
+        var on = state.theory === t.id;
+        return '<button type="button" class="tchip' + (on ? " on" : "") + (n ? "" : " zero") + '" data-theory="' + esc(t.id) +
+          '" title="' + esc(t.cite) + '" aria-pressed="' + on + '">' + esc(t.name) + ' <span class="n">' + n + "</span></button>";
+      }).join("");
+    }
+    var h = "";
+    h += '<div class="mx-corner"></div>';
+    h += '<div class="mx-col"><b>Weak sustainability</b>substitutable, win-win</div>';
+    h += '<div class="mx-col"><b>Strong sustainability</b>non-substitutable, limits</div>';
+    h += '<div class="mx-row"><b>Macro</b>economy, biosphere</div>';
+    h += '<div class="cell weak">Weak side, not tracked</div>';
+    h += '<div class="cell macro"><div class="chips">' + chips("macro-strong") + "</div></div>";
+    h += '<div class="mx-row"><b>Micro</b>firm</div>';
+    h += '<div class="cell weak">Weak side, not tracked</div>';
+    h += '<div class="cell micro"><div class="chips">' + chips("micro-strong") + "</div></div>";
+    $("matrix").innerHTML = h;
+    Array.prototype.forEach.call($("matrix").querySelectorAll("[data-theory]"), function (b) {
+      b.onclick = function () {
+        state.theory = state.theory === b.getAttribute("data-theory") ? null : b.getAttribute("data-theory");
+        render();
+      };
+    });
+    data.noneCount = none;
+  }
+
+  function renderList() {
+    var list = filtered();
+    var t = state.theory ? (state.theory === "_none" ? { name: "no matrix theory" } : data.byId[state.theory]) : null;
+    var s = "Showing <b>" + list.length + "</b> of " + data.articles.length;
+    if (t) s += " · " + esc(t.name) + ' <button class="linkbtn" type="button" id="clear">clear</button>';
+    else if (data.noneCount) s += ' · <button class="linkbtn" type="button" id="unmatched">' + data.noneCount + " with no matrix theory</button>";
+    $("showing").innerHTML = s;
+    if ($("clear")) $("clear").onclick = function () { state.theory = null; render(); };
+    if ($("unmatched")) $("unmatched").onclick = function () { state.theory = "_none"; render(); };
+
+    if (!data.articles.length) {
+      $("list").innerHTML = '<div class="empty">No articles yet. The list fills after the first weekly sweep.</div>';
+      return;
+    }
+    if (!list.length) {
+      $("list").innerHTML = '<div class="empty">Nothing matches these filters.</div>';
+      return;
+    }
+    $("list").innerHTML = list.map(card).join("");
+  }
+
+  function card(a) {
+    var watched = (a.watched || []).map(function (w) { return w.toLowerCase(); });
+    var authors = a.authors.slice(0, 8).map(function (name) {
+      var hit = watched.some(function (w) { return new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i").test(name); });
+      return hit ? "<b>" + esc(name) + "</b>" : esc(name);
+    }).join(", ") + (a.authors.length > 8 ? ", et al." : "");
+    var tags = (a.theories || []).map(function (t) {
+      var th = data.byId[t.id] || { name: t.id, quadrant: "" };
+      return '<span class="tag ' + esc(th.quadrant) + '">' + esc(th.name) + "</span>";
+    }).join("");
+    if (!tags) tags = '<span class="tag none">No matrix theory matched</span>';
+    var why = (a.theories || []).map(function (t) {
+      var th = data.byId[t.id] || { name: t.id };
+      return "<li><b>" + esc(th.name) + ":</b> " + esc(t.why.join("; ")) + "</li>";
+    }).join("");
+    var h = '<article class="card">';
+    h += '<div class="meta"><span class="j">' + esc(a.journal) + "</span>";
+    if (a.quartile) h += '<span class="badge q">' + esc(a.quartile) + "</span>";
+    h += "<span>" + esc(fmtDate(a.published)) + "</span>";
+    if (a.type === "review") h += "<span>Review</span>";
+    if (isNew(a)) h += '<span class="badge new">New</span>';
+    h += '<span class="score">Relevance <b>' + Number(a.score).toFixed(1) + "</b> / 10</span></div>";
+    h += '<h3><a href="' + esc(a.url) + '" target="_blank" rel="noopener">' + esc(a.title) + "</a></h3>";
+    h += '<p class="authors">' + (authors || "Authors not listed") + "</p>";
+    h += '<div class="tags">' + tags + "</div>";
+    if (why) h += '<ul class="why">' + why + "</ul>";
+    if (a.abstract) h += '<details class="abs"><summary>Abstract</summary><p>' + esc(a.abstract) + "</p></details>";
+    return h + "</article>";
+  }
+
+  function renderAbout() {
+    var r = latestRun();
+    if (r && r.threshold != null) $("thr").textContent = r.threshold;
+    $("journals").textContent = data.journals.map(function (j) { return j.name + (j.quartile ? " (" + j.quartile + ")" : ""); }).join("; ") + ".";
+    if (!data.runs.length) { $("log").innerHTML = "<p>No sweeps yet.</p>"; return; }
+    var rows = data.runs.slice().reverse().map(function (x) {
+      var note = [];
+      if (x.backfill) note.push("back-fill");
+      if (x.capped && x.capped.length) note.push("capped: " + x.capped.join(", "));
+      return "<tr><td>" + esc(fmtDate(x.date)) + "</td><td>" + esc(fmtDate(x.since)) + "</td><td>" + x.retrieved +
+        "</td><td>" + x.evaluated + "</td><td>" + x.added + "</td><td>" + x.total + "</td><td>" + esc(note.join("; ")) + "</td></tr>";
+    }).join("");
+    $("log").innerHTML = "<table><thead><tr><th>Sweep</th><th>Published from</th><th>Retrieved</th><th>Screened</th><th>Added</th><th>Listed</th><th>Notes</th></tr></thead><tbody>" + rows + "</tbody></table>";
+  }
+
+  function render() { renderStatus(); renderMatrix(); renderList(); }
+
+  $("q").addEventListener("input", function (e) { state.q = e.target.value; renderList(); });
+  $("f-new").onclick = function () { state.onlyNew = !state.onlyNew; this.classList.toggle("on", state.onlyNew); renderList(); };
+  $("f-watched").onclick = function () { state.onlyWatched = !state.onlyWatched; this.classList.toggle("on", state.onlyWatched); renderList(); };
+  $("sort").onchange = function (e) { state.sort = e.target.value; renderList(); };
+
+  Promise.all([
+    getJSON("data/articles.json").catch(function () { return []; }),
+    getJSON("data/runs.json").catch(function () { return []; }),
+    getJSON("config/theories.json"),
+    getJSON("config/journals.json")
+  ]).then(function (res) {
+    data.articles = res[0] || [];
+    data.runs = res[1] || [];
+    data.theories = (res[2] && res[2].theories) || [];
+    data.journals = (res[3] && res[3].journals) || [];
+    data.theories.forEach(function (t) { data.byId[t.id] = t; });
+    render();
+    renderAbout();
+  }).catch(function (err) {
+    $("status").textContent = "Could not load the data (" + err.message + ").";
+  });
+})();
+</script>
+</body>
+</html>

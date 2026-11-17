@@ -1,0 +1,17 @@
+{
+ "note": "Relevance scoring, carried over from the Strong Sustainability Watch HTML tool and tightened for an unattended list. Plain terms match whole words, case-insensitive, and a hyphen also matches a space or no space. Terms starting with re: are raw regular expressions.",
+ "threshold": 3.0,
+ "backfill_from": "2026-01-01",
+ "lookback_days": 45,
+ "keep_types": ["article", "review"],
+ "dictionary": {
+  "Biophysical limits": ["re:\\bplanetary boundar(y|ies)\\b", "ecological limits", "biophysical limits", "carrying capacity", "ecological ceiling", "safe operating space", "limits to growth", "ecological overshoot", "biocapacity", "throughput", "absolute sustainability", "absolute environmental sustainability", "earth-system boundaries"],
+  "Natural capital & substitutability": ["critical natural capital", "natural capital", "substitutability", "non-substitutability", "substitution", "complementarity", "irreversibility"],
+  "Theoretical anchors": ["strong sustainability", "weak sustainability", "ecological economics", "steady-state economy", "steady-state economics", "degrowth", "de-growth", "post-growth", "doughnut economics", "re:(?<!self-)(?<!self )\\bsufficiency\\b", "co-evolutionary sustainability", "co-evolutionary economics", "co-evolution", "co-evolutionary", "regenerative business", "regenerative economy", "regenerative economics", "regenerative sustainability", "regenerative organization", "regenerative organisation", "regenerative development", "regenerative", "regeneration", "well-being economy", "circular society"],
+  "Systemic framing": ["socio-ecological", "social-ecological", "systemic change", "system change", "social metabolism", "provisioning systems", "embeddedness", "metabolic", "paradigm shift"],
+  "Welfare & justice": ["intergenerational equity", "intragenerational", "environmental justice", "distributive justice", "human needs", "needs satisfaction", "planetary justice"]
+ },
+ "core": ["strong sustainability", "weak sustainability", "critical natural capital", "substitutability", "non-substitutability", "degrowth", "de-growth", "post-growth", "doughnut economics", "re:\\bplanetary boundar(y|ies)\\b", "re:(?<!self-)(?<!self )\\bsufficiency\\b", "steady-state economy", "steady-state economics", "co-evolutionary sustainability", "co-evolutionary economics", "regenerative business", "regenerative economy", "regenerative economics", "regenerative sustainability", "regenerative organization", "regenerative organisation", "regenerative development", "absolute sustainability", "absolute environmental sustainability", "circular society"],
+ "counter": ["eco-efficiency", "win-win", "business case for sustainability", "green growth", "triple bottom line", "shared value", "decoupling", "sustainable growth", "esg performance", "esg ratings", "materiality assessment"],
+ "watched_authors": ["Neumayer", "Daly", "Costanza", "Pearce", "Spash", "Hickel", "Raworth", "Bocken", "Kallis", "Heikkurinen", "Landrum", "Demastus", "Baumgartner", "Dyllick", "Elkington", "Muff"]
+}
