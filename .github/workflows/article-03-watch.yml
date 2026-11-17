@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "47 5 * * 1"   # Mondays 05:47 UTC, after the strong sustainability watch
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:   # rerun whenever the search itself changes
+      - "article-03-watch/config/**"
+      - "article-03-watch/sweep.py"
+      - ".github/workflows/article-03-watch.yml"
 
 permissions:
   contents: write
