@@ -14,7 +14,8 @@
   "total": 105,
   "capped": [],
   "anchors_resolved": "32 of 32",
-  "threshold": 3.0
+  "threshold": 3.0,
+  "finished": "2026-11-17T10:10:41+00:00"
  },
  {
   "date": "2026-11-17",
@@ -31,7 +32,8 @@
   "total": 486,
   "capped": [],
   "anchors_resolved": "32 of 32",
-  "threshold": 3.0
+  "threshold": 3.0,
+  "finished": "2026-11-17T15:38:00+00:00"
  },
  {
   "date": "2026-11-23",
@@ -48,7 +50,8 @@
   "total": 490,
   "capped": [],
   "anchors_resolved": "32 of 32",
-  "threshold": 3.0
+  "threshold": 3.0,
+  "finished": "2026-11-23T06:20:08+00:00"
  },
  {
   "date": "2026-11-23",
@@ -80,6 +83,7 @@
     ],
     "added": 7
    }
-  }
+  },
+  "finished": "2026-11-23T19:20:15+00:00"
  }
 ]

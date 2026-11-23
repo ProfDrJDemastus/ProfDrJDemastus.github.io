@@ -454,6 +454,7 @@ def run(oa, today=None, log=print):
         "retrieved": retrieved, "unique": len(processed), "evaluated": evaluated,
         "added": len(added), "total": len(articles), "capped": capped,
         "anchors_resolved": f"{resolved} of {len(anchors)}",
+        "finished": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "threshold": scorer.threshold, "rules_version": rules_version,
         "followed": followed_log,
     })

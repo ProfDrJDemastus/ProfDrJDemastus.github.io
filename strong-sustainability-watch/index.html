@@ -208,6 +208,18 @@
     if (p.length < 3) return iso;
     return parseInt(p[2], 10) + " " + (long ? MONTHS_LONG : MONTHS)[parseInt(p[1], 10) - 1] + " " + p[0];
   }
+  // Date and time a sweep finished, in Paris time, labelled CET in winter and CEST in summer.
+  function fmtWhen(run, long) {
+    if (!run.finished) return fmtDate(run.date, long);
+    var d = new Date(run.finished);
+    if (isNaN(d)) return fmtDate(run.date, long);
+    var g = {};
+    new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(d).forEach(function (p) { g[p.type] = p.value; });
+    var offset = ((parseInt(g.hour, 10) - d.getUTCHours()) + 24) % 24;
+    return fmtDate(g.year + "-" + g.month + "-" + g.day, long) + ", " + g.hour + ":" + g.minute + " " + (offset === 2 ? "CEST" : "CET");
+  }
+
   function getJSON(path) {
     return fetch(path, { cache: "no-cache" }).then(function (r) {
       if (!r.ok) throw new Error(path + " " + r.status);
@@ -268,7 +280,7 @@
     if (!r) { $("status").innerHTML = "The first sweep has not run yet."; return; }
     var newN = data.articles.filter(isNew).length;
     var from = data.runs.reduce(function (m, x) { return x.since < m ? x.since : m; }, data.runs[0].since);
-    var parts = ["Last sweep <b>" + esc(fmtDate(r.date, true)) + "</b>",
+    var parts = ["Last sweep <b>" + esc(fmtWhen(r, true)) + "</b>",
       "<b>" + total + "</b> articles since " + esc(fmtDate(from, true))];
     if (!latestWeekly()) parts.push("first sweep, back-filled");
     else parts.push("<b>" + newN + "</b> new this week");
@@ -370,7 +382,7 @@
       var note = [];
       if (x.backfill) note.push("back-fill");
       if (x.capped && x.capped.length) note.push("capped: " + x.capped.join(", "));
-      return "<tr><td>" + esc(fmtDate(x.date)) + "</td><td>" + esc(fmtDate(x.since)) + "</td><td>" + x.retrieved +
+      return "<tr><td>" + esc(fmtWhen(x)) + "</td><td>" + esc(fmtDate(x.since)) + "</td><td>" + x.retrieved +
         "</td><td>" + x.evaluated + "</td><td>" + x.added + "</td><td>" + x.total + "</td><td>" + esc(note.join("; ")) + "</td></tr>";
     }).join("");
     $("log").innerHTML = "<table><thead><tr><th>Sweep</th><th>Published from</th><th>Retrieved</th><th>Screened</th><th>Added</th><th>Listed</th><th>Notes</th></tr></thead><tbody>" + rows + "</tbody></table>";
