@@ -16,6 +16,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -125,9 +126,24 @@ class OpenAlex:
             time.sleep(PAUSE)
         return out, bool(cursor) and pages >= MAX_PAGES
 
-    def work_by_doi(self, doi):
+    def work_by_doi(self, doi, select="id,display_name,publication_year"):
         path = "/works/doi:" + urllib.parse.quote(doi, safe="/:()")
-        return self.get(path, {"select": "id,display_name,publication_year"})
+        return self.get(path, {"select": select})
+
+    def works_by_author(self, author_id, since):
+        out, cursor, pages = [], "*", 0
+        while cursor and pages < MAX_PAGES:
+            res = self.get("/works", {
+                "filter": f"author.id:{author_id},from_publication_date:{since}",
+                "select": SELECT + ",primary_location", "per_page": PAGE_SIZE, "cursor": cursor})
+            pages += 1
+            batch = (res or {}).get("results") or []
+            out.extend(batch)
+            cursor = ((res or {}).get("meta") or {}).get("next_cursor")
+            if not batch:
+                break
+            time.sleep(PAUSE)
+        return out
 
 
 # ---------------------------------------------------------------- text
@@ -234,6 +250,25 @@ class TheoryMatcher:
         return tags
 
 
+def fold(s):
+    """Lower-case and strip accents, for comparing author names."""
+    return "".join(c for c in unicodedata.normalize("NFKD", str(s or "")) if not unicodedata.combining(c)).lower()
+
+
+def resolve_followed(oa, person):
+    """OpenAlex author ids for a followed person, read from the authorships of their known works.
+    OpenAlex sometimes splits one person over several ids, so every match is kept."""
+    surname = fold(person["name"].split()[-1])
+    ids = set()
+    for doi in person.get("known_works", []):
+        w = oa.work_by_doi(norm_doi(doi), select="id,authorships")
+        for a in (w or {}).get("authorships") or []:
+            au = a.get("author") or {}
+            if au.get("id") and re.search(r"\b" + re.escape(surname) + r"\b", fold(au.get("display_name"))):
+                ids.add(short_id(au["id"]))
+    return sorted(ids)
+
+
 def year_chunks(since, today):
     """Split a long window into calendar years so big journals stay under the page cap.
     The last chunk has no end date, so articles dated ahead of today are still caught."""
@@ -317,15 +352,23 @@ def run(oa, today=None, log=print):
 
     scorer = Scorer(scoring)
     matcher = TheoryMatcher(theories_cfg, anchors)
+    always_rx = [term_regex(t) for t in scoring.get("always_include", [])]
+
+    def always_listed(entry):
+        text = entry["title"] + " \n " + entry.get("abstract", "") + " \n " + " ".join(entry.get("keywords", []))
+        return any(rx.search(text) for rx in always_rx)
     surnames = scoring.get("watched_authors", [])
     keep_types = set(scoring.get("keep_types", ["article", "review"]))
 
     # 2. Window: from the last good sweep minus the lookback, or the backfill date.
-    #    If backfill_from is moved earlier than anything swept so far, sweep back to it once.
+    #    If backfill_from is moved earlier than anything swept so far, or rules_version is
+    #    raised after a change to what gets listed, sweep back to backfill_from once.
     good = [r for r in runs if r.get("ok")]
     backfill_from = dt.date.fromisoformat(scoring["backfill_from"])
     covered_from = min((dt.date.fromisoformat(r["since"]) for r in good), default=None)
-    if not good or backfill_from < covered_from:
+    rules_version = int(scoring.get("rules_version", 1))
+    rules_changed = bool(good) and int(good[-1].get("rules_version", 1)) != rules_version
+    if not good or backfill_from < covered_from or rules_changed:
         since, backfill = backfill_from, True
     else:
         last = dt.date.fromisoformat(good[-1]["date"])
@@ -360,12 +403,44 @@ def run(oa, today=None, log=print):
                 evaluated += 1
                 entry = evaluate(entry_from_work(w, j, matcher, today.isoformat()),
                                  scorer, matcher, surnames)
-                if entry["score"] >= scorer.threshold:
+                if entry["score"] >= scorer.threshold or always_listed(entry):
+                    if backfill:
+                        entry["backfilled"] = True
                     added.append(entry)
                     known_ids.add(wid)
                     if doi:
                         known_dois.add(doi)
         log(f"{j['name']}: done ({oa.requests} requests so far)")
+
+    # 3b. Followed authors: list all their new work, in any venue, whatever its score.
+    by_id = {a["id"]: a for a in articles + added}
+    issn_to_journal = {i.upper(): j for j in journals for i in j["issns"]}
+    followed_types = set(scoring.get("followed_types", ["article", "review", "book-chapter"]))
+    followed_log = {}
+    for person in scoring.get("followed_authors", []):
+        ids = resolve_followed(oa, person)
+        n = 0
+        for aid in ids:
+            for w in oa.works_by_author(aid, since.isoformat()):
+                wid = short_id(w.get("id"))
+                doi = norm_doi(w.get("doi"))
+                if not wid or (w.get("type") or "") not in followed_types:
+                    continue
+                entry = by_id.get(wid) or next((a for a in articles + added if doi and a.get("doi") == doi), None)
+                if entry is None:
+                    src = ((w.get("primary_location") or {}).get("source") or {})
+                    j = next((issn_to_journal[i.upper()] for i in (src.get("issn") or []) if i.upper() in issn_to_journal), None)
+                    j = j or {"id": "other:" + short_id(src.get("id")), "name": src.get("display_name") or "Other venue", "quartile": ""}
+                    entry = evaluate(entry_from_work(w, j, matcher, today.isoformat()), scorer, matcher, surnames)
+                    if backfill:
+                        entry["backfilled"] = True
+                    added.append(entry)
+                    by_id[wid] = entry
+                    n += 1
+                if person["name"] not in entry.setdefault("followed", []):
+                    entry["followed"].append(person["name"])
+        followed_log[person["name"]] = {"openalex_ids": ids, "added": n}
+        log(f"Followed {person['name']}: {len(ids)} OpenAlex ids, {n} works added")
 
     # 4. Re-score earlier entries so edits to the config files carry through.
     for a in articles:
@@ -379,7 +454,8 @@ def run(oa, today=None, log=print):
         "retrieved": retrieved, "unique": len(processed), "evaluated": evaluated,
         "added": len(added), "total": len(articles), "capped": capped,
         "anchors_resolved": f"{resolved} of {len(anchors)}",
-        "threshold": scorer.threshold,
+        "threshold": scorer.threshold, "rules_version": rules_version,
+        "followed": followed_log,
     })
     write_json(os.path.join(DATA_DIR, "anchors.json"), anchors)
     write_json(os.path.join(DATA_DIR, "articles.json"), articles)

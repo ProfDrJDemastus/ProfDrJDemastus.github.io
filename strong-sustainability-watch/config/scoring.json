@@ -4,6 +4,16 @@
  "backfill_from": "2020-01-01",
  "lookback_days": 45,
  "keep_types": ["article", "review"],
+ "rules_version": 2,
+ "rules_version_note": "Raise this number after changing what gets listed, so the next sweep rechecks everything back to backfill_from once.",
+ "always_include": ["strong sustainability"],
+ "always_include_note": "Articles in the 32 journals whose title, abstract or keywords use one of these phrases are listed whatever their relevance score.",
+ "followed_authors": [
+  {"name": "James Demastus", "known_works": ["10.1002/bse.3511", "10.1080/13662716.2024.2390991"]},
+  {"name": "Nancy E. Landrum", "known_works": ["10.1177/1086026617717456", "10.1002/bse.1989", "10.1108/IJSHE-07-2016-0135", "10.1002/bse.3511"]}
+ ],
+ "followed_authors_note": "All new work by these authors is listed, in any venue and whatever its score. Each is identified in OpenAlex through the authorships of the known works.",
+ "followed_types": ["article", "review", "book-chapter"],
  "dictionary": {
   "Biophysical limits": ["re:\\bplanetary boundar(y|ies)\\b", "ecological limits", "biophysical limits", "carrying capacity", "ecological ceiling", "safe operating space", "limits to growth", "ecological overshoot", "biocapacity", "throughput", "absolute sustainability", "absolute environmental sustainability", "earth-system boundaries"],
   "Natural capital & substitutability": ["critical natural capital", "natural capital", "substitutability", "non-substitutability", "substitution", "complementarity", "irreversibility"],

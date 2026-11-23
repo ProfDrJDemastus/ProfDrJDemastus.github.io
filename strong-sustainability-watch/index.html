@@ -87,6 +87,7 @@
   .badge { font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border-radius: 6px; padding: .1rem .4rem; }
   .badge.new { color: var(--new); border: 1px solid var(--new); }
   .badge.q { background: var(--weak-soft); color: var(--ink); }
+  .badge.follow { background: var(--micro-soft); color: var(--micro); text-transform: none; letter-spacing: 0; font-weight: 600; }
   .score { margin-left: auto; font-size: .8rem; color: var(--muted); white-space: nowrap; }
   .score b { color: var(--ink); font-variant-numeric: tabular-nums; }
   .card h3 { font-size: 1.05rem; line-height: 1.35; margin: .35rem 0 .25rem; }
@@ -146,6 +147,7 @@
     <input type="search" id="q" placeholder="Search titles, authors, journals" aria-label="Search">
     <button class="pill" id="f-new" type="button">New this week</button>
     <button class="pill" id="f-watched" type="button">Watched authors</button>
+    <button class="pill" id="f-followed" type="button">Followed authors</button>
   </div>
   <div class="controls filters">
     <label>Journal <select id="f-journal"><option value="">All journals</option></select></label>
@@ -169,7 +171,8 @@
   <section class="about">
     <details>
       <summary>How this works</summary>
-      <p>Every Monday a script on GitHub queries <a href="https://openalex.org">OpenAlex</a> for articles and reviews published in the journals on the allow-list, querying each journal ISSN separately and looking back 45 days so late-indexed articles are caught. The list goes back to articles published from 1 January 2020. Each article gets a relevance score from 0 to 10, where 10 is most relevant. Core concepts in the title count most and core concepts in the abstract or keywords count next. Breadth across topic categories adds a little, purely weak-sustainability or ESG framing is penalized, and each matched matrix theory adds 0.75, up to 1.5. Articles scoring <span id="thr">3</span> or more join the list.</p>
+      <p>Every Monday a script on GitHub queries <a href="https://openalex.org">OpenAlex</a> for articles and reviews published in the journals on the allow-list, querying each journal ISSN separately and looking back 45 days so late-indexed articles are caught. The list goes back to articles published from 1 January 2020. Each article gets a relevance score from 0 to 10, where 10 is most relevant. Core concepts in the title count most and core concepts in the abstract or keywords count next. Breadth across topic categories adds a little, purely weak-sustainability or ESG framing is penalized, and each matched matrix theory adds 0.75, up to 1.5. Articles scoring <span id="thr">3</span> or more join the list, and so does any article that uses the phrase strong sustainability, whatever its score.</p>
+      <p>All new work by the followed authors, James Demastus and Nancy E. Landrum, is listed wherever it appears and whatever its score, including outside the 32 journals. Watched authors are only highlighted when their articles qualify on their own.</p>
       <p>An article is linked to a theory when its title, abstract or keywords use that theory's distinctive language, or when its reference list cites one of the theory's anchor works from the sustainability matrix article. The reason is shown under each article. Matching is by keywords and citations, not by reading, so treat the links as leads to check.</p>
       <p>The settings live on GitHub in three files, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/journals.json">journal list</a>, the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/theories.json">theories and anchor works</a>, and the <a href="https://github.com/ProfDrJDemastus/ProfDrJDemastus.github.io/blob/main/strong-sustainability-watch/config/scoring.json">scoring dictionary</a>. The full data is in <a href="data/articles.json">articles.json</a>.</p>
     </details>
@@ -187,7 +190,7 @@
 <script>
 (function () {
   "use strict";
-  var state = { theory: null, q: "", onlyNew: false, onlyWatched: false, sort: "added",
+  var state = { theory: null, q: "", onlyNew: false, onlyWatched: false, onlyFollowed: false, sort: "added",
     journal: "", year: "", quartile: "", minScore: 0, type: "" };
   var data = { articles: [], runs: [], theories: [], journals: [], byId: {} };
   var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -213,9 +216,13 @@
   }
 
   function latestRun() { return data.runs.length ? data.runs[data.runs.length - 1] : null; }
+  function latestWeekly() {
+    for (var i = data.runs.length - 1; i >= 0; i--) if (!data.runs[i].backfill) return data.runs[i];
+    return null;
+  }
   function isNew(a) {
-    var r = latestRun();
-    return !!(r && !r.backfill && a.added === r.date);
+    var r = latestWeekly();
+    return !!(r && a.added === r.date && !a.backfilled);
   }
 
   function filtered() {
@@ -227,6 +234,7 @@
       }
       if (state.onlyNew && !isNew(a)) return false;
       if (state.onlyWatched && !(a.watched && a.watched.length)) return false;
+      if (state.onlyFollowed && !(a.followed && a.followed.length)) return false;
       if (state.journal && a.journal_id !== state.journal) return false;
       if (state.year && (a.published || "").slice(0, 4) !== state.year) return false;
       if (state.quartile) {
@@ -262,7 +270,7 @@
     var from = data.runs.reduce(function (m, x) { return x.since < m ? x.since : m; }, data.runs[0].since);
     var parts = ["Last sweep <b>" + esc(fmtDate(r.date, true)) + "</b>",
       "<b>" + total + "</b> articles since " + esc(fmtDate(from, true))];
-    if (r.backfill) parts.push("first sweep, back-filled");
+    if (!latestWeekly()) parts.push("first sweep, back-filled");
     else parts.push("<b>" + newN + "</b> new this week");
     $("status").innerHTML = parts.join(" · ");
   }
@@ -343,6 +351,7 @@
     h += "<span>" + esc(fmtDate(a.published)) + "</span>";
     if (a.type === "review") h += "<span>Review</span>";
     if (isNew(a)) h += '<span class="badge new">New</span>';
+    if (a.followed && a.followed.length) h += '<span class="badge follow">Followed: ' + esc(a.followed.join(", ")) + "</span>";
     h += '<span class="score">Relevance <b>' + Number(a.score).toFixed(1) + "</b> / 10</span></div>";
     h += '<h3><a href="' + esc(a.url) + '" target="_blank" rel="noopener">' + esc(a.title) + "</a></h3>";
     h += '<p class="authors">' + (authors || "Authors not listed") + "</p>";
@@ -372,12 +381,14 @@
   $("q").addEventListener("input", function (e) { state.q = e.target.value; renderList(); });
   $("f-new").onclick = function () { state.onlyNew = !state.onlyNew; this.classList.toggle("on", state.onlyNew); renderList(); };
   $("f-watched").onclick = function () { state.onlyWatched = !state.onlyWatched; this.classList.toggle("on", state.onlyWatched); renderList(); };
+  $("f-followed").onclick = function () { state.onlyFollowed = !state.onlyFollowed; this.classList.toggle("on", state.onlyFollowed); renderList(); };
   $("sort").onchange = function (e) { state.sort = e.target.value; renderList(); };
   [["f-journal", "journal"], ["f-year", "year"], ["f-q", "quartile"], ["f-score", "minScore"], ["f-type", "type"]].forEach(function (p) {
     $(p[0]).onchange = function (e) { state[p[1]] = p[1] === "minScore" ? Number(e.target.value) : e.target.value; renderList(); };
   });
   $("reset").onclick = function () {
-    state.theory = null; state.q = ""; state.onlyNew = false; state.onlyWatched = false;
+    state.theory = null; state.q = ""; state.onlyNew = false; state.onlyWatched = false; state.onlyFollowed = false;
+    $("f-followed").classList.remove("on");
     state.journal = ""; state.year = ""; state.quartile = ""; state.minScore = 0; state.type = "";
     $("q").value = ""; $("f-new").classList.remove("on"); $("f-watched").classList.remove("on");
     $("f-journal").value = ""; $("f-year").value = ""; $("f-q").value = ""; $("f-score").value = "0"; $("f-type").value = "";
@@ -385,16 +396,16 @@
   };
 
   function populateFilters() {
-    var jc = {}, yc = {};
+    var jc = {}, yc = {}, names = {};
     data.articles.forEach(function (a) {
       jc[a.journal_id] = (jc[a.journal_id] || 0) + 1;
+      names[a.journal_id] = a.journal;
       var y = (a.published || "").slice(0, 4);
       if (y) yc[y] = (yc[y] || 0) + 1;
     });
-    $("f-journal").innerHTML = '<option value="">All journals</option>' + data.journals
-      .filter(function (j) { return jc[j.id]; })
-      .sort(function (a, b) { return a.name.localeCompare(b.name); })
-      .map(function (j) { return '<option value="' + esc(j.id) + '">' + esc(j.name) + " (" + jc[j.id] + ")</option>"; }).join("");
+    $("f-journal").innerHTML = '<option value="">All journals</option>' + Object.keys(jc)
+      .sort(function (a, b) { return names[a].localeCompare(names[b]); })
+      .map(function (id) { return '<option value="' + esc(id) + '">' + esc(names[id]) + " (" + jc[id] + ")</option>"; }).join("");
     $("f-year").innerHTML = '<option value="">All years</option>' + Object.keys(yc).sort().reverse()
       .map(function (y) { return '<option value="' + esc(y) + '">' + esc(y) + " (" + yc[y] + ")</option>"; }).join("");
   }
