@@ -32,5 +32,22 @@
   "capped": [],
   "anchors_resolved": "32 of 32",
   "threshold": 3.0
+ },
+ {
+  "date": "2026-11-23",
+  "since": "2026-10-03",
+  "backfill": false,
+  "ok": true,
+  "journals": 32,
+  "issns": 57,
+  "requests": 64,
+  "retrieved": 2896,
+  "unique": 1690,
+  "evaluated": 1608,
+  "added": 4,
+  "total": 490,
+  "capped": [],
+  "anchors_resolved": "32 of 32",
+  "threshold": 3.0
  }
 ]
