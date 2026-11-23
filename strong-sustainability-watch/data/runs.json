@@ -49,5 +49,37 @@
   "capped": [],
   "anchors_resolved": "32 of 32",
   "threshold": 3.0
+ },
+ {
+  "date": "2026-11-23",
+  "since": "2020-01-01",
+  "backfill": true,
+  "ok": true,
+  "journals": 32,
+  "issns": 57,
+  "requests": 882,
+  "retrieved": 126843,
+  "unique": 84359,
+  "evaluated": 80913,
+  "added": 31,
+  "total": 521,
+  "capped": [],
+  "anchors_resolved": "32 of 32",
+  "threshold": 3.0,
+  "rules_version": 2,
+  "followed": {
+   "James Demastus": {
+    "openalex_ids": [
+     "A5006077386"
+    ],
+    "added": 1
+   },
+   "Nancy E. Landrum": {
+    "openalex_ids": [
+     "A5071305222"
+    ],
+    "added": 7
+   }
+  }
  }
 ]

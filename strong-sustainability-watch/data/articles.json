@@ -1,5 +1,57 @@
 [
  {
+  "id": "W7237862083",
+  "doi": "10.1007/s10551-026-06525-z",
+  "url": "https://doi.org/10.1007/s10551-026-06525-z",
+  "title": "The Ethic of Decency and the Antecedents of Corporate Sufficiency",
+  "authors": [
+   "Anna Sophia Burch",
+   "Fabian Takacs",
+   "Nien‐hê Hsieh",
+   "Karolin Frankenberger"
+  ],
+  "journal": "Journal of Business Ethics",
+  "journal_id": "jbe",
+  "quartile": "Q1",
+  "published": "2026-11-23",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "As the paradigm of perpetual economic growth is increasingly seen as incompatible with environmental and social sustainability, sufficiency has gained traction as an alternative organizing principle to align economic activity with socio-ecological well-being. This study advances understanding of why and how firms engage in sufficiency. We define corporate sufficiency as the practice of corporate self-restraint grounded in the imperative to operate within planetary boundaries, even at the risk of forgoing profits and growth. While prior scholarship has challenged profit maximization as a corporate guiding principle, less is known about why firms voluntarily practice self-restraint and how they enact sufficiency in an economic context geared toward growth. Through a qualitative analysis of 70 sufficiency-oriented firms, we identify three antecedents that either motivate or enable observed corporate sufficiency practices, namely responsibility, relationality, and excellence. We argue that these antecedents can be framed within the ethic of decency, which provides context-sensitive guidance for firms to deliberate on and enact self-restraint in production and consumption practices. Through the advancement of decency as an ethical framework for corporate sufficiency, this study extends and integrates sufficiency and business ethics scholarship. It challenges the instrumental logic that underpins the sustainable consumption discourse and proposes a normative framework for reconciling business conduct with the imperatives of planetary and human well-being.",
+  "keywords": [],
+  "cited": [
+   "W1517861947",
+   "W2105414963",
+   "W4378905467",
+   "W4386706488"
+  ],
+  "score": 6.8,
+  "terms": [
+   "planetary boundaries",
+   "sufficiency",
+   "socio-ecological"
+  ],
+  "theories": [
+   {
+    "id": "planetary-boundaries",
+    "why": [
+     "mentions \"planetary boundaries\"",
+     "cites Rockström et al. 2009 (Ecology & Society)",
+     "cites Richardson et al. 2023",
+     "cites Rockström et al. 2023"
+    ]
+   },
+   {
+    "id": "sufficiency-post-growth-organizing",
+    "why": [
+     "mentions \"sufficiency-oriented\"",
+     "cites Bocken & Short 2016"
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
   "id": "W7234642893",
   "doi": "10.1007/s10551-026-06521-3",
   "url": "https://doi.org/10.1007/s10551-026-06521-3",
@@ -221,6 +273,1355 @@
   ],
   "watched": [
    "Hickel"
+  ]
+ },
+ {
+  "id": "W7223019280",
+  "doi": "10.1016/j.jclepro.2026.149743",
+  "url": "https://doi.org/10.1016/j.jclepro.2026.149743",
+  "title": "Exploring sustainable food procurement strategy – the case of farmed fish",
+  "authors": [
+   "Cecilia Mark‐Herbert",
+   "Karolina Frankling",
+   "Hanna Carlberg",
+   "Julia Aldberg"
+  ],
+  "journal": "Journal of Cleaner Production",
+  "journal_id": "jclp",
+  "quartile": "Q1",
+  "published": "2026-10-01",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Sustainable food procurement faces complex challenges, including balancing environmental goals with economic constraints, ensuring consistent supply, and meeting consumer expectations. This study explores how Sweden's major grocery retailers (ICA, Coop, and Axfood) approach the procurement of locally produced fish amid growing concerns about food system vulnerabilities. Focusing on consumer preferences, branding, and sustainability commitments, the study uses a qualitative case study design based on interviews with procurement managers and secondary data from annual and sustainability reports. Guided by frameworks on product branding and sustainable food procurement strategy, the analysis reveals a gap between sustainability ambitions and actual procurement practices. Despite strong sustainability messaging, Swedish fish remains underrepresented due to high prices, limited availability, and unpredictable demand. Consumers show interest in local, sustainable fish but tend to buy familiar, accessible options like salmon and cod. Nevertheless, retailers are taking steps through supplier collaboration, cost management, and gradual product integration. The findings offer insights into how branding and sustainability commitments shape procurement strategies and highlight key barriers and opportunities for strengthening local sourcing.",
+  "keywords": [
+   "sustainable food procurement",
+   "farmed fish",
+   "local sourcing",
+   "grocers",
+   "product branding",
+   "sustainability commitments",
+   "consumer preferences",
+   "supplier collaboration",
+   "food system vulnerability",
+   "Ica",
+   "Coop"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W7212039534",
+  "doi": "10.1002/sd.71650",
+  "url": "https://doi.org/10.1002/sd.71650",
+  "title": "When Innovation Meets Nature and Governance: A Conditional Path to Sustainable Development",
+  "authors": [
+   "Phan Khanh Duy",
+   "Thanh Tiep Le"
+  ],
+  "journal": "Sustainable Development",
+  "journal_id": "sd",
+  "quartile": "Q1",
+  "published": "2026-09-09",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Despite expanding global innovation capacity, countries with similar green innovation trajectories exhibit sharply divergent sustainable development goal (SDG) performance. Drawing on strong sustainability theory, economic complexity theory and new institutional economics, this study develops a conditional sustainability framework in which ecological integrity and governance quality enhance the sustainability returns to green innovation. Using a balanced panel of 45 countries from 2000 to 2021 (990 observations), we apply CS‐ARDL estimation following cross‐sectional dependence, unit root, slope heterogeneity and cointegration tests, with CCEMG and AMG robustness checks. Results show that ecological integrity and governance quality exert positive long‐run effects on SDG performance, whereas green innovation alone has a statistically fragile direct effect. Crucially, ecological integrity × innovation and innovation × governance interactions are consistently positive and significant across estimators. Green innovation therefore generates stronger sustainability returns when supported by robust ecological systems and effective institutional governance.",
+  "keywords": [
+   "green innovation",
+   "Sustainable Development Goals",
+   "ecological integrity",
+   "governance quality",
+   "strong sustainability",
+   "economic complexity",
+   "new institutional economics",
+   "cross-country panel data"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W7155551484",
+  "doi": "10.1007/s10551-026-06326-4",
+  "url": "https://doi.org/10.1007/s10551-026-06326-4",
+  "title": "Green Talent, Greener Outcomes? The Role of Governance in Translating Green Hiring into Substantive Environmental Action",
+  "authors": [
+   "Le Luo",
+   "Mauricio Marrone"
+  ],
+  "journal": "Journal of Business Ethics",
+  "journal_id": "jbe",
+  "quartile": "Q1",
+  "published": "2026-04-24",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "This study examines whether green hiring is associated with enhanced firm-level environmental outcomes, using a novel dataset of 19,248,635 job ads for Fortune 100 firms from 2009 to 2022. We find that such hiring is positively associated with environmental performance, particularly through improvements in environmental innovation, supply chain monitoring, resource efficiency, environmental product development, and stakeholder engagement. Cross-sectional analyses reveal that the positive association is stronger when new green hires are distributed across diverse occupations and weaker when concentrated in top-level roles. In addition, green hiring is more strongly linked to outcomes in firms with strong sustainability governance, as evidenced by the presence of dedicated committees, environmental investments, standalone sustainability reports and environmental training. These findings indicate that green hiring’s potential benefits may rely on robust sustainability governance within firms. Such structures may help human capital investments yield measurable environmental performance gains and reduce the risk of green hiring becoming a symbolic gesture rather than a substantive commitment to stakeholders. However, the relationship concentrates only among firms in non-environmentally sensitive industries and larger firms. This study contributes to the environmental performance literature by providing new evidence on how workforce transformation relates to corporate sustainability and informs strategic approaches to building greener organizations.",
+  "keywords": [
+   "green hiring",
+   "corporate environmental performance",
+   "sustainability governance",
+   "job advertisements",
+   "green innovation",
+   "supply chain monitoring",
+   "resource efficiency",
+   "stakeholder engagement",
+   "corporate sustainability",
+   "workforce transformation"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W7124603795",
+  "doi": "10.1016/j.jenvman.2026.128558",
+  "url": "https://doi.org/10.1016/j.jenvman.2026.128558",
+  "title": "Towards reduced pesticide use in agriculture: A multiple-case study of agrosupply business models for low pesticide solutions",
+  "authors": [
+   "Edwige Fain",
+   "Stephane Lemarié",
+   "Aline Fugeray-Scarbel",
+   "Adrien Hervouet"
+  ],
+  "journal": "Journal of Environmental Management",
+  "journal_id": "jem",
+  "quartile": "Q1",
+  "published": "2026-01-17",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "The agrosupply sector plays a key role in the transition toward reduced pesticide use by developing and commercializing alternative crop protection market offerings. This article examines the business models of agrosupply actors based on eight cases-including biocontrol, equipment, and digital tools. Results reveal diverse models, some mirroring pesticide approaches and others drawing on digital-economy logics, with providers generally aiming for pesticide-level performance while requiring limited changes to existing practices. In the discussion, we distinguish models according to their implications for ecological transition and suggest that low-sustainability pathways rely on business models largely compatible with pesticide models, with the risk of reinforcing structural lock-ins and hindering future shifts toward strong sustainability.",
+  "keywords": [
+   "pesticide reduction",
+   "biological control",
+   "agricultural machinery",
+   "digital tools in agriculture",
+   "green transition",
+   "structural lock-in",
+   "strong sustainability",
+   "agrochemical industry"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4416252142",
+  "doi": "10.1002/bse.70346",
+  "url": "https://doi.org/10.1002/bse.70346",
+  "title": "The Role of Corporate Sustainability in Shaping Integrated Reporting Quality: Insights From Europe",
+  "authors": [
+   "Soufiene Assidi",
+   "Mohamed Elmagrhi"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "quartile": "Q1",
+  "published": "2025-11-14",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Drawing on corporate sustainability and integrated reporting literature, this study investigates the extent to which corporate sustainability strategy influences integrated reporting quality, with a particular focus on the moderating role of national governance. Using a comprehensive panel data sample of 2850 firm‐year observations from 285 non‐financial firms across six key European economies (the United Kingdom, Germany, Denmark, France, Sweden and Italy) over the period 2013–2022, our study contributes to the extant literature by providing timely evidence on the impact of corporate sustainability strategy on integrated reporting quality. Our findings show that firms with strong sustainability strategies tend to engage in high‐quality integrated reporting. Furthermore, our evidence suggests that the influence of corporate sustainability strategy on integrated reporting is moderated/explained largely by national governance. Our findings are robust to controlling for various endogeneity issues, with major implications for managers, policymakers, governments and other stakeholders.",
+  "keywords": [
+   "corporate sustainability strategy",
+   "integrated reporting",
+   "reporting quality",
+   "national governance",
+   "moderating effect",
+   "non-financial firms",
+   "European firms",
+   "corporate governance"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4413087046",
+  "doi": "10.1002/sd.70084",
+  "url": "https://doi.org/10.1002/sd.70084",
+  "title": "Teacher Education as an Agent for Sustainability: Validation of an SDGs ‐Focused Knowledge, Attitude, and Behavior Questionnaire for Pre‐Service Primary Teachers",
+  "authors": [
+   "Jorge Crespo‐Martín",
+   "Isaac Corbacho‐Cuello",
+   "Aurora Muñoz‐Losa"
+  ],
+  "journal": "Sustainable Development",
+  "journal_id": "sd",
+  "quartile": "Q1",
+  "published": "2025-07-16",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "This study validates the Knowledge, Attitude, and Behavior (KAB) Questionnaire, a comprehensive tool designed to evaluate sustainability‐related knowledge, attitudes, and behaviors among pre‐service primary school teachers, with a specific alignment to five key Sustainable Development Goals (SDGs). The questionnaire, comprising 39 items across three dimensions—economic, environmental, and social—was administered to 229 pre‐service teachers at a Spanish university. Exploratory and Confirmatory Factor Analyses confirmed its three‐factor structure, with high internal consistency for each dimension (Cronbach's Alpha > 0.80). The findings reveal that while participants demonstrate strong sustainability knowledge and positive attitudes, there is a significant gap between these attitudes and their actual sustainable behaviors, highlighting the well‐documented “knowledge‐action gap.” The KAB Questionnaire provides a robust instrument for evaluating how teacher education programs address sustainability, offering insights that can inform the design of initiatives to promote meaningful action‐oriented learning and engagement with sustainability principles.",
+  "keywords": [
+   "teacher professional development",
+   "sustainability",
+   "Sustainable Development Goals",
+   "pre-service primary teachers",
+   "questionnaire validation",
+   "sustainability knowledge",
+   "sustainable behavior",
+   "environmental education",
+   "socio-economic sustainability"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4411570549",
+  "doi": "10.1108/srj-12-2024-0878",
+  "url": "https://doi.org/10.1108/srj-12-2024-0878",
+  "title": "Sustainability culture in accounting firms: leveraging AI to strengthen green human and structural capital",
+  "authors": [
+   "Saeed Awadh Bin‐Nashwan",
+   "Jackie Zhanbiao Li"
+  ],
+  "journal": "Social Responsibility Journal",
+  "journal_id": "srj",
+  "quartile": "Q2",
+  "published": "2025-06-24",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Purpose This study aims to examine how AI-powered knowledge (AIK) influences the internal dimensions of green intellectual capital (GIC)—green human capital (GHC) and green structural capital (GSC)—and how these elements, in turn, shape firms’ sustainability culture. Design/methodology/approach A cross-sectional research approach was used to collect data from accounting firms. The data were analyzed using SmartPLS-SEM to assess the proposed model. Findings The results indicate that AIK positively and significantly enhances GHC and GSC, which in turn play a critical role in fostering a strong sustainability culture within accounting firms. Specifically, AIK strengthens GHC by equipping professionals with advanced sustainability knowledge and decision-making capabilities, whereas it enhances GSC by optimizing sustainability-related processes and reporting structures. Furthermore, GHC and GSC were found to be key drivers of sustainability culture, reinforcing the integration of sustainability into professional practices. Practical implications The findings provide actionable insights for accounting firms, policymakers and industry stakeholders. Firms are encouraged to invest in AI-driven training programs to enhance GHC and leverage AI-powered systems to improve GSC, ensuring sustainability principles are embedded into their operations. In addition, regulators and professional bodies should promote AI-powered sustainability frameworks to standardize best practices and improve industry-wide compliance with environmental regulations. Originality/value While accounting firms stand to gain significantly from integrating sustainability-focused GIC practices, research in this area remains limited. This study contributes to the literature by highlighting the transformative role of AIK in strengthening GHC, GSC and sustainability culture, addressing a critical gap in sustainability-driven accounting research.",
+  "keywords": [
+   "sustainability culture",
+   "accounting firms",
+   "green intellectual capital",
+   "green human capital",
+   "green structural capital",
+   "artificial intelligence in accounting",
+   "sustainability knowledge",
+   "environmental compliance",
+   "AI training programs"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4410008417",
+  "doi": "10.1002/bse.4323",
+  "url": "https://doi.org/10.1002/bse.4323",
+  "title": "Identifying Corporate Innovative Sustainability Strategies in Consultancy Reports: A Systematic (Grey) Literature Review",
+  "authors": [
+   "Robin Strueber",
+   "Dev Kumar Boojihawon",
+   "John R. Bryson"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "quartile": "Q1",
+  "published": "2025-05-01",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Decarbonisation requires firms to rethink and redefine growth, informed by strong sustainability principles. Management consultants are important enablers for clients to strategically manage resource constraints, given their limited capabilities in this transition. Consultancy institutional logics play an important role in inducing new knowledge cooperative processes in consultant and client cognitive structures. This paper systematically reviews client‐facing reports generated during this process to identify emerging sustainability strategy issues and future theoretical applications. This is a novel way to apply a systematic literature review (SLR) to identify tacit knowledge outcomes in meta‐consulting knowledge creation pathways. The findings indicate that accessing consultancy institutional logic provides firms with intellectual resources to organise sustainability into manageable challenges to address legislative and competitive demands. A knowledge exchange gap between academia and the consulting industry is identified, and a framework is developed for practice‐oriented sustainability research by expanding the existing research on knowledge exchange loops between management and external knowledge providers.",
+  "keywords": [
+   "management consulting",
+   "sustainability strategy",
+   "decarbonization",
+   "knowledge sharing",
+   "tacit knowledge",
+   "knowledge production",
+   "corporate sustainability"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4409284993",
+  "doi": "10.1016/j.jenvman.2025.125253",
+  "url": "https://doi.org/10.1016/j.jenvman.2025.125253",
+  "title": "Agricultural systems design: Strategies for nutritionally oriented sustainable intensification",
+  "authors": [
+   "Felipe Dalzotto Artuzo",
+   "Gabriela Allegretti",
+   "Paulo César de Faccio Carvalho",
+   "Edson Talamini"
+  ],
+  "journal": "Journal of Environmental Management",
+  "journal_id": "jem",
+  "quartile": "Q1",
+  "published": "2025-04-09",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "",
+  "keywords": [
+   "sustainable intensification",
+   "crop diversification",
+   "crop-livestock integration",
+   "monoculture",
+   "emergy analysis",
+   "strong sustainability",
+   "renewability"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4408968799",
+  "doi": "10.1002/csr.3161",
+  "url": "https://doi.org/10.1002/csr.3161",
+  "title": "Assessing the Sustainable Transition in LSPs Industry",
+  "authors": [
+   "Piera Centobelli"
+  ],
+  "journal": "Corporate Social Responsibility and Environmental Management",
+  "journal_id": "csrem",
+  "quartile": "Q1",
+  "published": "2025-03-26",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "The growing pressure on logistics service providers (LSPs) to achieve strong sustainability performance highlights the importance of aligning their practices with technological tools to support such endeavour. Given the significant effort required to implement sustainability measures in companies, it is crucial to focus on implementing these tools and practices effectively and efficiently. In response to this challenge, a decision support system (DSS) has been developed to evaluate the alignment between sustainability practices and supporting technologies. This system employs fuzzy logic to assess consistency and identify potential areas of improvement. The DSS developed has strong practical utility, offering managers not only insights into the current state of their sustainability initiatives but also strategic recommendations to enhance overall performance. By adopting this system, LSPs can more effectively navigate the complexities of sustainability while improving operational efficiency and long‐term environmental impact.",
+  "keywords": [
+   "logistics service providers",
+   "sustainability transitions",
+   "sustainability performance",
+   "decision support system",
+   "fuzzy logic",
+   "sustainable practices",
+   "environmental impact",
+   "operational efficiency"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4408848922",
+  "doi": "10.1002/bse.4259",
+  "url": "https://doi.org/10.1002/bse.4259",
+  "title": "Corporate Sustainability and M&A Acquisition Premiums",
+  "authors": [
+   "Gimede Gigante",
+   "Ludovico Galli",
+   "Francesca Scarlini"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "quartile": "Q1",
+  "published": "2025-03-24",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "This research explores the relationship between Corporate Sustainability and acquisition premiums in Mergers and Acquisitions (M&A) processes, focusing on Environmental, Social, and Governance (ESG) performance. While environmental concerns have gained prominence, this study investigates the underexplored impact of target firms' ESG scores on M&A premiums. By examining 325 M&A transactions, the research uncovers a positive correlation between higher ESG scores and increased acquisition premiums, suggesting that target companies with strong sustainability profiles can command better negotiating power. The findings highlight that a high ESG rating enhances both the target's value and the acquiring firm's potential to realize synergies and improve economic performance. Additionally, the study examines whether the relationship between M&A premiums and ESG scores is stronger for acquirers with high Corporate Social Responsibility (CSR) standards.",
+  "keywords": [
+   "corporate sustainability",
+   "mergers and acquisitions",
+   "acquisition premiums",
+   "ESG performance",
+   "target firm value",
+   "corporate social responsibility",
+   "bargaining power",
+   "synergistic effect"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4407828649",
+  "doi": "10.1002/sd.3384",
+  "url": "https://doi.org/10.1002/sd.3384",
+  "title": "How Far Is China From the Ideal Sustainable Development Pathway?",
+  "authors": [
+   "Sun Zhang",
+   "Wei Chen",
+   "Haimeng Shi",
+   "Qiao Li"
+  ],
+  "journal": "Sustainable Development",
+  "journal_id": "sd",
+  "quartile": "Q1",
+  "published": "2025-02-20",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Sustainable development is a concern across all sectors in the modern world. While numerous measures have been developed to evaluate sustainable development levels, significant gaps persist in assessing the sustainability of development pathways. This study assesses the sustainability of China's development through the framework of “strong sustainability” and proposes region‐specific development pathways informed by the Sustainable Development Goals (SDGs) index and underlying driving factors. The Sustainable Development Pathway Index (SDPI) is used to establish sustainable social standards and distinguish development pathways among regions. Using data from China in 2000 and 2020, quantile regression is employed to analyze the driving factors effectively. The results indicate a stepped distribution from east to west, with 77.42% of regions following a sustainable development pathway. Notably, Beijing has entered the “Brundtland Quadrat.” Ecological factors, such as vegetation cover, act as constraints on the development of regions with the HH and LH patterns. Social and cultural factors, such as infrastructure development and maternal education levels, play a pivotal role in guiding regions following sustainable development pathways toward an ideal sustainable development society. Accurately measuring the SDPI and determining regional development patterns provide valuable insights for decision‐makers and serve as key references for other developing countries in their pursuit of sustainable development pathways.",
+  "keywords": [
+   "sustainable development pathways",
+   "strong sustainability",
+   "Sustainable Development Goals",
+   "regional disparities",
+   "vegetation cover",
+   "infrastructure development",
+   "maternal education",
+   "China"
+  ],
+  "cited": [
+   "W2078744100",
+   "W2128799420"
+  ],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\"",
+     "cites Ekins et al. 2003",
+     "cites Pelenc & Ballet 2015"
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4403977630",
+  "doi": "10.1016/j.clrc.2024.100235",
+  "url": "https://doi.org/10.1016/j.clrc.2024.100235",
+  "title": "Emerging concerns in sustainability reporting: Disclosure of tertiary effects in the home appliance industry",
+  "authors": [
+   "Utkuhan Genc",
+   "Kendrick Hardaway",
+   "Nancy E. Landrum",
+   "John Mulrow"
+  ],
+  "journal": "Cleaner and Responsible Consumption",
+  "journal_id": "other:S4210227184",
+  "quartile": "",
+  "published": "2024-11-01",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Home appliances like refrigerators, washers, and dryers have grown rapidly worldwide, contributing to significant ecological impacts across their life cycle. Part of the corporate response to ecological concerns has been to better document and report impacts via Sustainability Reporting (SR), which follows various global standards but often lacks specificity, particularly in capturing beyond direct (tertiary) effects. Our review asks how well and to what extent sustainability reporting covers these emerging “tertiary effects”, in home appliance industry. We assess all 26 available SRs from 254 major home appliance brands (representing 50 conglomerate companies), to assess how well they cover tertiary effects including: measurement of Scope 3 greenhouse gas emissions, attention to the nine planetary boundaries, and estimation and discussion of potential rebound effects. Only 23% of reports mention rebound effects, often framed as beneficial due to increased product demand, without addressing the negative implications of expanded resource use. Just one report covers all nine planetary boundaries, and relevant Scope 3 emissions, such as emissions from product use, are mentioned in less than half of the reports. The findings point to many opportunities for companies to disclose tertiary impacts. We draw on existing SR literature and examples from the reviewed SR reports to suggest ways for corporate self-reporting to better reflect ecological realities further afield from direct production operations. To improve SR, companies should acknowledge potential rebound effects from efficiency gains and follow guidelines to address a wider range of planetary boundary impacts and Scope 3 emissions beyond climate and freshwater concerns.",
+  "keywords": [
+   "sustainability reporting",
+   "home appliance industry",
+   "rebound effect",
+   "Scope 3 emissions",
+   "planetary boundaries",
+   "greenhouse gas emissions",
+   "life cycle impacts",
+   "corporate disclosure",
+   "energy efficiency",
+   "freshwater use"
+  ],
+  "cited": [
+   "W1853397149",
+   "W1999167944",
+   "W4386706488"
+  ],
+  "score": 3.1,
+  "terms": [
+   "planetary boundaries"
+  ],
+  "theories": [
+   {
+    "id": "planetary-boundaries",
+    "why": [
+     "mentions \"planetary boundaries\"",
+     "cites Steffen et al. 2015",
+     "cites Richardson et al. 2023"
+    ]
+   },
+   {
+    "id": "absolute-biophysical-accounting",
+    "why": [
+     "mentions \"planetary boundaries\" with \"life cycle\"",
+     "cites Whiteman et al. 2013"
+    ]
+   }
+  ],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W4402016276",
+  "doi": "10.1002/csr.2943",
+  "url": "https://doi.org/10.1002/csr.2943",
+  "title": "The moderating role of investor sentiments between sustainability reporting and firm reputation. Evidence from Chinese listed firms",
+  "authors": [
+   "Zain Ul Abideen"
+  ],
+  "journal": "Corporate Social Responsibility and Environmental Management",
+  "journal_id": "csrem",
+  "quartile": "Q1",
+  "published": "2024-08-28",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "This study explores the relationship between sustainability reporting, investor sentiments, and firm reputation in the Chinese stock market. Utilizing panel data from 2018 to 2023 on non‐financial A‐share firms in China, this study employs OLS regression and advanced techniques to ensure robustness, including tests for heteroskedasticity and addressing endogeneity concerns through 2SLS, and potentially the two‐step GMM approach. Analysis exhibits a positive relationship between sustainability reporting, investor sentiments, and firm reputation. Strong sustainability practices correlate with more positive investor sentiment and enhanced firm reputation, aligning with sustainable development principles. Limitations include the restricted data timeframe, suggesting broader insights could be gained by extending the analysis period. Additionally, the study's focus on brand equity as a metric for reputation may overlook other facets. Future research could explore alternative reputation metrics and measurement methods. Integrating environmental, social, and governance reporting into corporate strategies can drive long‐term value creation and sustainable development, offering actionable insights for policymakers, investors, and corporate decision‐makers. This study contributes unique insights into how sustainability reporting influences investor sentiment and firm reputation within the Chinese stock market context, leveraging the SR framework and focusing on firms in China, thus providing valuable perspectives on a dynamic market.",
+  "keywords": [
+   "sustainability reporting",
+   "investor sentiment",
+   "corporate reputation",
+   "moderating effect",
+   "Chinese listed companies",
+   "corporate social responsibility disclosure",
+   "brand equity",
+   "sustainable development",
+   "Chinese stock market"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4402014454",
+  "doi": "10.1080/13662716.2024.2390991",
+  "url": "https://doi.org/10.1080/13662716.2024.2390991",
+  "title": "Exploring the nexus of organisational culture and sustainability for green innovation",
+  "authors": [
+   "James Demastus",
+   "Brian M. Ohsowski",
+   "Nancy E. Landrum"
+  ],
+  "journal": "Industry and Innovation",
+  "journal_id": "other:S36209479",
+  "quartile": "",
+  "published": "2024-08-28",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Organisations have embraced green innovation, but the desired environmental impacts remain unrealised. We approach this problem by focusing on how a driver of green innovation, sustainability, relates to organisational culture. Prior research suggests that understanding culture is fundamental to managing sustainability, but empirical research relating the two concepts is lacking. Global Reporting Initiative documents and annual reports to shareholders from 197 organisations were examined via content analysis to measure their sustainability strength with the Stages of Sustainability model and to quantify their organisational culture profiles on the Competing Value Framework. Expectedly, organisations oriented towards Hierarchy, and Market typologies were purveyors of weak sustainability. Unexpectedly, Clan organisations were found to reduce weak sustainability while Adhocracy types had no significant effect on sustainability strength. These findings result in implications for shifting organisational culture for strong sustainability. This knowledge can be leveraged in future research to cultivate impactful green innovation.",
+  "keywords": [
+   "organizational culture",
+   "green innovation",
+   "sustainability",
+   "strong sustainability",
+   "weak sustainability",
+   "Competing Values Framework",
+   "Global Reporting Initiative",
+   "corporate sustainability reporting",
+   "typology of culture",
+   "hierarchy",
+   "markets",
+   "clans",
+   "adhocracy"
+  ],
+  "cited": [
+   "W2926708384",
+   "W2996806711"
+  ],
+  "score": 4.1,
+  "terms": [
+   "strong sustainability",
+   "weak sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\"",
+     "mentions \"weak sustainability\""
+    ]
+   },
+   {
+    "id": "circular-society",
+    "why": [
+     "cites Schröder et al. 2019"
+    ]
+   },
+   {
+    "id": "sufficiency-post-growth-organizing",
+    "why": [
+     "cites Brozovic 2020"
+    ]
+   }
+  ],
+  "watched": [
+   "Landrum",
+   "Demastus"
+  ],
+  "backfilled": true,
+  "followed": [
+   "James Demastus",
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W4393999460",
+  "doi": "10.1016/j.spc.2024.03.036",
+  "url": "https://doi.org/10.1016/j.spc.2024.03.036",
+  "title": "Investigating the entrepreneurial orientation of circular-social hybrid start-ups by assessing their path toward sustainability: Evidence from 20 European cases",
+  "authors": [
+   "Charleen von Kolpinski",
+   "Enrico Cagno",
+   "Alessandra Neri"
+  ],
+  "journal": "Sustainable Production and Consumption",
+  "journal_id": "spc",
+  "quartile": "Q1",
+  "published": "2024-04-05",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Circular-social hybrid start-ups have a remarkable potential to create environmental, social, and economic value. Despite their relevance for the sustainability transition, there is a dearth of literature analysing their entrepreneurial orientation and how they create environmental and social value in their business models. Therefore, the present study, framed in the theory of entrepreneurial orientation, empirically assesses the dynamics of creating positive sustainable value by aligning the initial orientation with the sustainability activities and performance. The research is conducted through semi-structured interviews with the founders of twenty European start-ups. The study shows that circular-social hybrid start-ups have a strong sustainability orientation, but some display difficulties in achieving their initial mission. This entrepreneurial path from mission to reality is identified by uncovering business model dynamics and leverage points: scale-up and growth, use of digital solutions, improvement of working conditions, research and development, and alignment of business processes. These leverage points influence the potential mission drift of the start-up, i.e. its deviation from the path to sustainability. Entrepreneurs can use this study to identify leverage points to support their path toward sustainability.",
+  "keywords": [
+   "entrepreneurial orientation",
+   "sustainability transitions",
+   "mission drift",
+   "business model dynamics",
+   "leverage points",
+   "startup founders",
+   "digital solutions",
+   "working conditions",
+   "research and development",
+   "business process alignment"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4387257331",
+  "doi": "10.4324/9781003343011-15",
+  "url": "https://doi.org/10.4324/9781003343011-15",
+  "title": "We Are Prolonging Unsustainability. Shouldn't We Save Humanity Instead?",
+  "authors": [
+   "Nancy E. Landrum"
+  ],
+  "journal": "Routledge eBooks",
+  "journal_id": "other:S4306463855",
+  "quartile": "",
+  "published": "2023-10-02",
+  "type": "book-chapter",
+  "added": "2026-11-23",
+  "abstract": "Corporate sustainability has not produced the expected results to address the climate crisis and, in fact, carbon emissions and other greenhouse gases continue to accumulate in the atmosphere. Earth’s average global temperature has already increased by nearly 1℃, and research suggests that we are on track for a total increase between 2.5℃ to 3.2°C, well beyond the 1.5°C increase by 2030 goal that scientists set as the threshold to avert severe consequences. Businesses have used economic science to guide sustainability decision making and have become mired in business-centred sustainability, or business as usual with incremental improvements, a form of weak sustainability. But weak business-centred ‘sustainability’ is a misnomer and is not sustainable at all. Weak business-centred sustainability only masks and prolongs unsustainability. The only solution to the climate crisis and to save humanity is to move business, industry and society towards strong sustainability.",
+  "keywords": [
+   "corporate sustainability",
+   "weak sustainability",
+   "strong sustainability",
+   "climate crisis",
+   "CO2 emissions",
+   "greenhouse gases",
+   "global warming",
+   "sustainable decision-making",
+   "climate change mitigation"
+  ],
+  "cited": [],
+  "score": 3.4,
+  "terms": [
+   "strong sustainability",
+   "weak sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\"",
+     "mentions \"weak sustainability\""
+    ]
+   }
+  ],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W4386640506",
+  "doi": "10.1002/bse.3562",
+  "url": "https://doi.org/10.1002/bse.3562",
+  "title": "Firms' sustainability engagement and sustainability‐related controversies",
+  "authors": [
+   "Peter Kotzian"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "quartile": "Q1",
+  "published": "2023-09-11",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Sustainability issues became ever more important for firms' business strategies. Not living up to public and stakeholders' expectations results in controversies damaging the firm's reputation. Firms integrate sustainability aspects – environmental, social, and governance (ESG) issues – in their business strategies to satisfy stakeholders ranging from customers to investors. Substantial resources are invested to increase their sustainability engagement to avoid sustainability‐related controversies. However, the degree to which sustainability engagement is effective is an open issue, as the occurrence of sustainability‐related controversies has structural components, which are under the firms' control, but also random components. Using data on firms' sustainability engagement, this paper investigates to what degree firms can actually avoid controversies by engaging in sustainability and to what degree such controversies are caused by factors beyond the firm's control, like random events or the societal environment. Our findings indicate strong sustainability engagement to be a significant factor for avoiding controversies, albeit the magnitude of the effect is very limited. While controversies are not purely random events, they are driven strongly by factors beyond the firm's strategic control, like firm size and country of origin.",
+  "keywords": [
+   "sustainability engagement",
+   "corporate reputation",
+   "ESG integration",
+   "stakeholder expectations",
+   "firm size",
+   "country of origin",
+   "random events",
+   "corporate sustainability strategy"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4319444954",
+  "doi": "10.1016/j.jclepro.2023.136368",
+  "url": "https://doi.org/10.1016/j.jclepro.2023.136368",
+  "title": "Bike-sharing under pressure: The role of cycling in building circular cycling futures",
+  "authors": [
+   "Malin Henriksson",
+   "Joel Göransson Scalzotto"
+  ],
+  "journal": "Journal of Cleaner Production",
+  "journal_id": "jclp",
+  "quartile": "Q1",
+  "published": "2023-02-06",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Bike-sharing could play an important role in any future circular economy since sharing solutions have the potential to challenge the current automobility regime. This paper examines the potential contributions of two Swedish bike-sharing initiatives: grassroots-initiated bike kitchens and a commercial bike-sharing service system. We explore and analyze the visions of these initiatives and how they can be nurtured in order to support a circular future. The results indicate that the incumbent regime challenges cycling initiatives through commercialization and professionalization pressures. The paper notes that the studied initiatives can contribute to a future circular economy, but in different ways. While bike kitchens support the social aspects of circularity, commercial bike-sharing is more likely to support ecological aspects. Both kinds of initiatives are crucial and rely on the support of public actors with a strong sustainability agenda.",
+  "keywords": [
+   "bike sharing",
+   "circular economy",
+   "cycling",
+   "sharing economy",
+   "automobility",
+   "commercialization",
+   "professionalization",
+   "public support",
+   "sustainability policy",
+   "grassroots initiatives"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4297015156",
+  "doi": "10.1016/j.jclepro.2022.134297",
+  "url": "https://doi.org/10.1016/j.jclepro.2022.134297",
+  "title": "Sustainability comparison of commercial Brazilian organic and conventional broiler production systems under a 5SENSU model perspective",
+  "authors": [
+   "Rafael Araújo Nacimento",
+   "Vitória Toffolo Luiz",
+   "Cecilia Mitie Ifuki Mendes",
+   "Biagio F. Giannetti",
+   "Augusto Hauber Gameiro"
+  ],
+  "journal": "Journal of Cleaner Production",
+  "journal_id": "jclp",
+  "quartile": "Q1",
+  "published": "2022-09-23",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "",
+  "keywords": [
+   "broiler production",
+   "organic poultry production",
+   "sustainability assessment",
+   "strong sustainability",
+   "goal programming",
+   "emergy synthesis",
+   "animal welfare",
+   "stocking density",
+   "greenhouse gas emissions",
+   "production costs",
+   "sustainability index",
+   "Brazilian poultry industry"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4285123000",
+  "doi": "10.1007/978-981-19-1812-4_1",
+  "url": "https://doi.org/10.1007/978-981-19-1812-4_1",
+  "title": "Sustainability in the Biom*",
+  "authors": [
+   "Nancy E. Landrum",
+   "Taryn Mead"
+  ],
+  "journal": "Environmental footprints and eco-design of products and processes",
+  "journal_id": "other:S4210170043",
+  "quartile": "",
+  "published": "2022-05-25",
+  "type": "book-chapter",
+  "added": "2026-11-23",
+  "abstract": "",
+  "keywords": [
+   "biomimetics",
+   "sustainable design"
+  ],
+  "cited": [],
+  "score": 0.0,
+  "terms": [],
+  "theories": [],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W4223611660",
+  "doi": "10.1002/bse.3088",
+  "url": "https://doi.org/10.1002/bse.3088",
+  "title": "Are firms with better sustainability performance more resilient during crises?",
+  "authors": [
+   "Jing Lu",
+   "Kathleen Shea Rodenburg",
+   "Lianne Foti",
+   "Ann L. Pegoraro"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "quartile": "Q1",
+  "published": "2022-04-11",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "This paper investigates the relationship between sustainability and financial performance using a sample of G7 firms from 2004 to 2020. We find a positive bidirectional relationship that firms with better sustainability performance are more profitable in the future and firms with better financial performance have higher subsequent sustainability performance. In addition, we test how two major crises (the financial crisis and the COVID‐19 pandemic) affect the sustainability‐financial performance relationship. Firms with better sustainability performance are hit harder on their financial performance, but the benefits of financial performance on sustainability are strengthened during the financial crisis. During the ongoing COVID‐19 crisis, firms with strong sustainability performance have been more resilient, and their financial performance has dropped less than firms with poor sustainability performance. However, the benefits of profitability on sustainability are weakened. Our results suggest that sustainability provides “insurance”‐like protection against economic downturns during COVID‐19 and mature sustainability offers economic benefits but not early‐stage sustainability. It expands the contingency perspective of sustainability–financial performance relationship to crisis management.",
+  "keywords": [
+   "corporate sustainability performance",
+   "financial performance",
+   "crisis resilience",
+   "COVID-19 pandemic",
+   "financial crisis",
+   "contingency perspective",
+   "crisis management"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W4214835440",
+  "doi": "10.1016/j.ecolecon.2022.107366",
+  "url": "https://doi.org/10.1016/j.ecolecon.2022.107366",
+  "title": "Born to transform? German bioeconomy policy and research projects for transformations towards sustainability",
+  "authors": [
+   "Kristina Bogner",
+   "Johannes Dahlke"
+  ],
+  "journal": "Ecological Economics",
+  "journal_id": "ee",
+  "quartile": "Q1",
+  "published": "2022-03-04",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Aiming at fostering the transition towards a sustainable climate-neutral economy, the German Federal Government (GFG) intends to promote the transition towards a sustainable knowledge-based bioeconomy (SKBBE). Bioeconomy policies are adjusted regularly, increasingly focusing on addressing the grand challenges of our time. To analyze whether the German bioeconomy policy, in terms of strategies and publicly funded research projects, actually fosters knowledge creation for the desired transformation, these strategies and projects have to be evaluated. Using a mixed-methods approach, this paper aims at investigating in what way German bioeconomy policy is dedicated to transformations towards sustainability and whether this reflects in the publicly funded research projects. Our study shows that the strategies as well as the publicly funded projects, still have a strong techno-economic orientation, focusing on technologies as problem-solvers, lacking, e.g., normative or transformative knowledge. What is more, the artificially generated R&D network does not show the necessary structure or involvement of stakeholders, lacking, e.g., the involvement of civil society or transdisciplinary research. We argue that future innovation policy has to foster all types of knowledge relevant for transformations towards sustainability, incorporating all stakeholders. Otherwise, the bioeconomy transition might become a purely technological endeavor unable to foster strong sustainability.",
+  "keywords": [
+   "bioeconomy policy",
+   "innovation policy",
+   "normative knowledge",
+   "transdisciplinary research",
+   "stakeholder engagement",
+   "civil society",
+   "R&D networks",
+   "German federal government",
+   "climate-neutral economy",
+   "strong sustainability"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W3166429698",
+  "doi": "10.1108/ijshe-10-2020-0395",
+  "url": "https://doi.org/10.1108/ijshe-10-2020-0395",
+  "title": "The Global Goals: bringing education for sustainable development into US business schools",
+  "authors": [
+   "Nancy E. Landrum"
+  ],
+  "journal": "International Journal of Sustainability in Higher Education",
+  "journal_id": "other:S129922104",
+  "quartile": "",
+  "published": "2021-06-11",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Purpose This paper aims to learn how sustainability and the circular economy were being integrated into the curriculum of a Dutch university and to transfer that knowledge back to a US university business school curriculum. Given the resistance toward integrating sustainability into the US business school curriculum, the Dutch university served as a role model for education for sustainable development. Design/methodology/approach This case study used ethnographic methods of participant observation over a four-month residency at the Dutch university. Findings Themes observed are as follows: success in the current context relied upon sustainability being integrated into the culture and lifestyle, legislative enforcement, a focus on urban sustainability, use of the Sustainable Development Goals (SDGs) and collaboration as a key to success. The course proposal shifted to a class on the SDGs which is broader, more inclusive, and interdisciplinary. The proposal to integrate circular economy into the US business school curriculum shifted to a class on the SDGs. It was determined that the SDGs presented a more amenable approach to introduce sustainability into the business school curriculum and meet the objectives of education for sustainable development. Research limitations/implications This case study is based upon the author’s experience at one university in the Netherlands. Limitations include the generalizability of the findings to another university as well as the question of transferability across cultures. Practical implications This case study offers one suggestion for integrating sustainability into the business school curriculum. Social implications Integrating sustainability into the business school curriculum through the SDGs might help overcome resistance. Originality/value The findings offer an alternative approach for integrating sustainability into the business school curriculum that is aligned with AACSB standards and which might face less resistance.",
+  "keywords": [
+   "sustainability education",
+   "Sustainable Development Goals",
+   "business school curriculum",
+   "circular economy",
+   "curriculum transfer",
+   "urban sustainability",
+   "interdisciplinary curriculum"
+  ],
+  "cited": [],
+  "score": 0.0,
+  "terms": [],
+  "theories": [],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W3116618552",
+  "doi": "10.1016/j.ecolecon.2020.106933",
+  "url": "https://doi.org/10.1016/j.ecolecon.2020.106933",
+  "title": "Do cultural capital and social capital matter for economic performance? An empirical investigation of tribal agriculture in New Caledonia",
+  "authors": [
+   "Natalia Zugravu-Soilita",
+   "Rajwane Kafrouni",
+   "Séverine Bouard",
+   "Leïla Apithy"
+  ],
+  "journal": "Ecological Economics",
+  "journal_id": "ee",
+  "quartile": "Q1",
+  "published": "2020-12-28",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "",
+  "keywords": [
+   "cultural capital",
+   "social capital",
+   "structural social capital",
+   "tribal agriculture",
+   "crop yield",
+   "agricultural production",
+   "interpersonal relationships",
+   "strong sustainability",
+   "socio-economic sustainability",
+   "New Caledonia",
+   "indigenous peoples"
+  ],
+  "cited": [
+   "W2078744100"
+  ],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\"",
+     "cites Ekins et al. 2003"
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W3100011600",
+  "doi": "10.1016/j.jclepro.2020.125178",
+  "url": "https://doi.org/10.1016/j.jclepro.2020.125178",
+  "title": "COVID-19 pandemic lessons to facilitate future engagement in the global climate crisis",
+  "authors": [
+   "Krystal M. Perkins",
+   "Nora Munguía",
+   "Michael J. Ellenbecker",
+   "Rafael Moure‐Eraso",
+   "Luis E. Velazquez"
+  ],
+  "journal": "Journal of Cleaner Production",
+  "journal_id": "jclp",
+  "quartile": "Q1",
+  "published": "2020-11-17",
+  "type": "review",
+  "added": "2026-11-23",
+  "abstract": "",
+  "keywords": [
+   "COVID-19 pandemic",
+   "climate crisis",
+   "climate change mitigation",
+   "fossil fuel consumption",
+   "greenhouse gas emissions",
+   "strong sustainability",
+   "rugged individualism",
+   "public trust in science",
+   "media coverage of COVID-19",
+   "government measures",
+   "citizen participation"
+  ],
+  "cited": [],
+  "score": 2.4,
+  "terms": [
+   "strong sustainability"
+  ],
+  "theories": [
+   {
+    "id": "ecological-economics",
+    "why": [
+     "mentions \"strong sustainability\""
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W3029224448",
+  "doi": "10.4337/9781788971966.00016",
+  "url": "https://doi.org/10.4337/9781788971966.00016",
+  "title": "Sustainability management from a responsible management perspective",
+  "authors": [
+   "Markus Beckmann",
+   "Stefan Schaltegger",
+   "Nancy E. Landrum"
+  ],
+  "journal": "Edward Elgar Publishing eBooks",
+  "journal_id": "other:S4306463223",
+  "quartile": "",
+  "published": "2020-05-18",
+  "type": "book-chapter",
+  "added": "2026-11-23",
+  "abstract": "Taking the viewpoint of responsible management, this chapter develops a conceptual perspective on sustainability management and discusses its research implications. It shows that sustainability management (a) addresses a specific form of responsibility (to manage the long-term creation of value and the reduction of disvalue in the ecological, social, and economic dimension in an integrative manner),( b) responds to the expectations and needs of specific others (natural and social environments on the micro-, meso-, and macro-level), (c) refers to specific responsibility objects (life-cycle, value chain, and consumption-related effects), (d) uses specific tools and (e) unfolds as the interplay of specific responsibility roles (explicit and implicit sustainability managers as well as sustainable managers) that can display agency for sustainability. Topics for further research are discussed and scholars are invited to explore the relationship between sustainable and responsible management.",
+  "keywords": [
+   "sustainability management",
+   "responsible management",
+   "corporate social responsibility",
+   "long-term value creation",
+   "life cycle management",
+   "value chain",
+   "consumption effects",
+   "sustainability managers",
+   "agency",
+   "sustainable management"
+  ],
+  "cited": [],
+  "score": 0.0,
+  "terms": [],
+  "theories": [],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W3029995344",
+  "doi": "10.4337/9781788971966.00021",
+  "url": "https://doi.org/10.4337/9781788971966.00021",
+  "title": "Bioinspiration as a guide for responsible management",
+  "authors": [
+   "Taryn Mead",
+   "Nancy E. Landrum"
+  ],
+  "journal": "Edward Elgar Publishing eBooks",
+  "journal_id": "other:S4306463223",
+  "quartile": "",
+  "published": "2020-05-18",
+  "type": "book-chapter",
+  "added": "2026-11-23",
+  "abstract": "This chapter proposes that bioinspired management and innovation, with foundations in life science and systems thinking, engenders an insightful and bioinclusive approach to the practice of responsible management. Responsible management is grounded in three main tenants: Responsibility, Sustainability, and Ethics. In parallel, biomimicry positions nature as “Model, Measure, and Mentor”. This chapter analyzes how responsibility relates to nature as model, sustainability relies on nature as measure, and ethics calls on nature as mentor. It includes a general overview of biomimicry, some current case studies, and common critiques. It closes with future directions for the study of biomimicry in the context of responsible management.",
+  "keywords": [
+   "bioinspiration",
+   "biomimetics",
+   "responsible management",
+   "sustainability",
+   "business ethics",
+   "systems thinking",
+   "corporate social responsibility"
+  ],
+  "cited": [],
+  "score": 0.0,
+  "terms": [],
+  "theories": [],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
+  ]
+ },
+ {
+  "id": "W2949221038",
+  "doi": "10.3197/096327119x15579936382491",
+  "url": "https://doi.org/10.3197/096327119x15579936382491",
+  "title": "How Far is Degrowth a Really Revolutionary Counter Movement to Neoliberalism?",
+  "authors": [
+   "Dorothea Elena Schoppek"
+  ],
+  "journal": "Environmental Values",
+  "journal_id": "ev",
+  "quartile": "Q2",
+  "published": "2020-04-01",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Capitalism is often modernised and stabilised by its very critics. Gramsci called this paradox a ‘passive revolution’. What are the pitfalls through which critique becomes absorbed? This question is taken up using a Cultural Political Economy approach for analysing the resistant potential of ‘degrowth discourses’ against the neoliberal hegemony. Degrowth advocates an economy without growth in order to achieve the transformation that is necessary in ecological and social terms. It thus does not follow the neoliberal idea of green capitalism that already has absorbed much environmental critique. This paper argues that degrowth needs to be further differentiated in order to draw any conclusions about its counter-hegemonic potential. Three dimensions are iden-tified for differentiating sub-hegemonic from counter-hegemonic degrowth positions: the mode of growth critique, the interpellation of the individual and the subsequent actions motivated.",
+  "keywords": [
+   "degrowth",
+   "neoliberalism",
+   "counter-hegemony",
+   "passive revolution",
+   "Antonio Gramsci",
+   "cultural political economy",
+   "green capitalism",
+   "economic growth critique",
+   "interpellation",
+   "ecological transformation",
+   "social change"
+  ],
+  "cited": [
+   "W2800279418"
+  ],
+  "score": 6.3,
+  "terms": [
+   "degrowth"
+  ],
+  "theories": [
+   {
+    "id": "degrowth",
+    "why": [
+     "mentions \"degrowth\"",
+     "cites Eversberg & Schmelzer 2018"
+    ]
+   }
+  ],
+  "watched": [],
+  "backfilled": true
+ },
+ {
+  "id": "W3011577468",
+  "doi": "10.1108/cpoib-08-2018-0066",
+  "url": "https://doi.org/10.1108/cpoib-08-2018-0066",
+  "title": "A critical discourse analysis to explain the failure of BoP strategies",
+  "authors": [
+   "Nancy E. Landrum"
+  ],
+  "journal": "Critical Perspectives on International Business",
+  "journal_id": "other:S45303301",
+  "quartile": "",
+  "published": "2020-03-16",
+  "type": "article",
+  "added": "2026-11-23",
+  "abstract": "Purpose This paper aims to highlight differences between business and non-business literature regarding base of the pyramid (BoP) and subsistence contexts and reveal discourse’s powerful role in influencing goals, solutions and outcomes. Design/methodology/approach This paper uses critical discourse analysis to review a convenience sample of business versus non-business literature on the BoP and subsistence contexts. Findings Discourse used in business literature on the BoP is oriented toward hegemonic Western capitalist approaches that result in the depletion of resources, resource inequalities, poverty and increased consumption, dependence and environmental degradation and, therefore, cannot alleviate poverty. Research limitations/implications There are two primary limitations: the study relied on a convenience sample that was not random and comparatively, the business BoP literature is not as mature as the non-business subsistence literature and, therefore, the BoP field of study is not yet fully developed. Practical implications Discourse has a powerful role in revealing assumptions and guiding actions. A change in BoP discourse toward a strength-based approach can serve as a model of sustainability and can help powerful entities enact structural and systemic change. Originality/value This paper reveals the role of discourse in business BoP literature and how it perpetuates and even exacerbates the problems they were designed to alleviate: depletion of resources, resource inequalities, poverty and increased consumption, dependence and environmental degradation. The paper challenges researchers, economists and powerful guiding entities to reorient their discourse of the BoP to be more aligned with those of non-business researchers of subsistence markets.",
+  "keywords": [
+   "bottom of the pyramid",
+   "subsistence markets",
+   "discourse analysis",
+   "poverty reduction",
+   "resource depletion",
+   "resource inequality",
+   "environmental degradation",
+   "strengths-based approach",
+   "sustainability",
+   "systemic change"
+  ],
+  "cited": [],
+  "score": 0.6,
+  "terms": [
+   "systemic change"
+  ],
+  "theories": [],
+  "watched": [
+   "Landrum"
+  ],
+  "backfilled": true,
+  "followed": [
+   "Nancy E. Landrum"
   ]
  },
  {
@@ -16677,6 +18078,9 @@
   ],
   "watched": [
    "Landrum"
+  ],
+  "followed": [
+   "Nancy E. Landrum"
   ]
  },
  {
@@ -16983,6 +18387,10 @@
   "watched": [
    "Landrum",
    "Demastus"
+  ],
+  "followed": [
+   "James Demastus",
+   "Nancy E. Landrum"
   ]
  },
  {
