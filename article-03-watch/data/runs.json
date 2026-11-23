@@ -26,5 +26,33 @@
   },
   "issns_with_no_results": [],
   "capped": []
+ },
+ {
+  "date": "2026-11-23",
+  "first_run": false,
+  "ok": true,
+  "requests": 380,
+  "retrieved": 2267,
+  "records": 616,
+  "core": 76,
+  "adjacent": 540,
+  "new": 2,
+  "per_journal": {
+   "bas": 5,
+   "bse": 163,
+   "ce": 3,
+   "ctep": 8,
+   "csrem": 101,
+   "jclp": 187,
+   "jeem": 8,
+   "jem": 76,
+   "oae": 12,
+   "srj": 15,
+   "jri": 3,
+   "sampj": 31,
+   "tm": 4
+  },
+  "issns_with_no_results": [],
+  "capped": []
  }
 ]

@@ -1,5 +1,54 @@
 [
  {
+  "id": "W7236680905",
+  "doi": "10.1002/bse.71880",
+  "title": "Green Marketing Research: An Umbrella Review of Systematic Reviews and Bibliometric Analyses With an Integrated Future Research Agenda",
+  "authors": [
+   "Alene Eyasu",
+   "Mulugeta Negash",
+   "Girma Tilahun"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "year": 2026,
+  "published": "2026-11-18",
+  "type": "review",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "greenwashing"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-23"
+ },
+ {
+  "id": "W7234885078",
+  "doi": "10.1002/bse.71849",
+  "title": "Emission Differentiation as a Self‐Financing Transition Mechanism: The Case of Sustainability in Automotive Repair and Maintenance",
+  "authors": [
+   "Niclas Kurzmann",
+   "Svetlana A. Ikonnikova"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "year": 2026,
+  "published": "2026-11-17",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "business case for sustainability"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-23"
+ },
+ {
   "id": "W7233573811",
   "doi": "10.1002/csr.71178",
   "title": "Building Credible Sustainability Governance: Integrating Sustainability Performance, Sustainability Audits, and Greenwashing Risk",
@@ -75,6 +124,33 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W7225407800",
+  "doi": "10.1108/srj-03-2026-0290",
+  "title": "When sustainability backfires: Gen Z’s perceptions of greenwashing and trust in corporate campaigns",
+  "authors": [
+   "Tu Tran La",
+   "Phuong Thi Nguyen",
+   "Vu Minh Phuong Nguyen",
+   "Han My Giang",
+   "Tran Thuy Anh Le"
+  ],
+  "journal": "Social Responsibility Journal",
+  "journal_id": "srj",
+  "year": 2026,
+  "published": "2026-11-09",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "greenwashing"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4410948878",
   "doi": "10.1002/bse.71781",
   "title": "Do Investors Sanction Greenwashing? Selective Market Discipline in Fintech Firms",
@@ -117,33 +193,6 @@
   "terms": {
    "adjacent": [
     "integrated sustainability"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W7225407800",
-  "doi": "10.1108/srj-03-2026-0290",
-  "title": "When sustainability backfires: Gen Z’s perceptions of greenwashing and trust in corporate campaigns",
-  "authors": [
-   "Tu Tran La",
-   "Phuong Thi Nguyen",
-   "Vu Minh Phuong Nguyen",
-   "Han My Giang",
-   "Tran Thuy Anh Le"
-  ],
-  "journal": "Social Responsibility Journal",
-  "journal_id": "srj",
-  "year": 2026,
-  "published": "2026-11-06",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "greenwashing"
    ]
   },
   "has_abstract": true,
@@ -301,18 +350,17 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W7223576884",
-  "doi": "10.1002/csr.71108",
-  "title": "ESG Performance, Disclosure and Environmental Intensity: Implications for Profitability in Emerging Market Energy Companies",
+  "id": "W7223466397",
+  "doi": "10.1108/sampj-12-2025-1943",
+  "title": "Cultivating strength inside and out: green credit interest subsidy policies and corporate energy efficiency – new evidence from China",
   "authors": [
-   "María Encina Morales de Vega",
-   "María Carmen García Centeno",
-   "Susana González-Pérez"
+   "Kai Wan",
+   "Xiaolin Yu"
   ],
-  "journal": "Corporate Social Responsibility and Environmental Management",
-  "journal_id": "csrem",
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
   "year": 2026,
-  "published": "2026-10-25",
+  "published": "2026-10-27",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -326,17 +374,18 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W7223466397",
-  "doi": "10.1108/sampj-12-2025-1943",
-  "title": "Cultivating strength inside and out: green credit interest subsidy policies and corporate energy efficiency – new evidence from China",
+  "id": "W7223576884",
+  "doi": "10.1002/csr.71108",
+  "title": "ESG Performance, Disclosure and Environmental Intensity: Implications for Profitability in Emerging Market Energy Companies",
   "authors": [
-   "Kai Wan",
-   "Xiaolin Yu"
+   "María Encina Morales de Vega",
+   "María Carmen García Centeno",
+   "Susana González-Pérez"
   ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
+  "journal": "Corporate Social Responsibility and Environmental Management",
+  "journal_id": "csrem",
   "year": 2026,
-  "published": "2026-10-24",
+  "published": "2026-10-25",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -425,6 +474,31 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W7222953713",
+  "doi": "10.1108/sampj-05-2025-0658",
+  "title": "Exploring the role of intellectual capital in EU taxonomy compliance: the mediating effect of sustainability reporting",
+  "authors": [
+   "Federica Tonnarello",
+   "Valeria Naciti",
+   "Carlo Vermiglio"
+  ],
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
+  "year": 2026,
+  "published": "2026-10-20",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "integrated sustainability"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W7222919622",
   "doi": "10.1002/bse.71699",
   "title": "The Media Freedom Paradox: A Global Study of Corporate Greenwashing",
@@ -486,31 +560,6 @@
   ],
   "journal": "Corporate Social Responsibility and Environmental Management",
   "journal_id": "csrem",
-  "year": 2026,
-  "published": "2026-10-19",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "integrated sustainability"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W7222953713",
-  "doi": "10.1108/sampj-05-2025-0658",
-  "title": "Exploring the role of intellectual capital in EU taxonomy compliance: the mediating effect of sustainability reporting",
-  "authors": [
-   "Federica Tonnarello",
-   "Valeria Naciti",
-   "Carlo Vermiglio"
-  ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
   "year": 2026,
   "published": "2026-10-19",
   "type": "article",
@@ -864,7 +913,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2026,
-  "published": "2026-09-22",
+  "published": "2026-09-23",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -1416,7 +1465,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2026,
-  "published": "2026-08-03",
+  "published": "2026-08-04",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -1657,7 +1706,7 @@
    ]
   },
   "has_abstract": true,
-  "mentions_sustainability": true,
+  "mentions_sustainability": false,
   "first_seen": "2026-11-17"
  },
  {
@@ -2071,7 +2120,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2026,
-  "published": "2026-06-08",
+  "published": "2026-06-09",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -2402,7 +2451,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2026,
-  "published": "2026-05-20",
+  "published": "2026-05-21",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -2544,18 +2593,19 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W7160377348",
-  "doi": "10.1002/bse.70942",
-  "title": "Free Trade Zones and Corporate ESG: Evidence From a Quasi‐Natural Experiment in China",
+  "id": "W7160231424",
+  "doi": "10.1108/sampj-12-2024-1421",
+  "title": "The impact of public environmental supervision on corporate greenwashing: empirical evidence from China’s 12369 environmental reporting platform",
   "authors": [
-   "Wen Li",
-   "Yinghan Zhao",
-   "Brian M. Lucey"
+   "Tao Wang",
+   "Yucong Yan",
+   "Chen Chen",
+   "Ximeng Jia"
   ],
-  "journal": "Business Strategy and the Environment",
-  "journal_id": "bse",
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
   "year": 2026,
-  "published": "2026-05-05",
+  "published": "2026-05-07",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -2569,17 +2619,16 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W7160231424",
-  "doi": "10.1108/sampj-12-2024-1421",
-  "title": "The impact of public environmental supervision on corporate greenwashing: empirical evidence from China’s 12369 environmental reporting platform",
+  "id": "W7160377348",
+  "doi": "10.1002/bse.70942",
+  "title": "Free Trade Zones and Corporate ESG: Evidence From a Quasi‐Natural Experiment in China",
   "authors": [
-   "Tao Wang",
-   "Yucong Yan",
-   "Chen Chen",
-   "Ximeng Jia"
+   "Wen Li",
+   "Yinghan Zhao",
+   "Brian M. Lucey"
   ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
   "year": 2026,
   "published": "2026-05-05",
   "type": "article",
@@ -4015,7 +4064,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2025,
-  "published": "2025-11-25",
+  "published": "2025-11-27",
   "type": "article",
   "language": "en",
   "stream": "core",
@@ -4345,7 +4394,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2025,
-  "published": "2025-10-06",
+  "published": "2025-10-07",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -4521,7 +4570,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2025,
-  "published": "2025-09-12",
+  "published": "2025-09-15",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -4570,7 +4619,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2025,
-  "published": "2025-09-03",
+  "published": "2025-09-04",
   "type": "article",
   "language": "en",
   "stream": "core",
@@ -4757,6 +4806,31 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W4412732344",
+  "doi": "10.1108/sampj-08-2024-0854",
+  "title": "Integrating societal issues into the asset allocation and selection strategies of ethical funds: the case of socially responsible funds and Islamic funds",
+  "authors": [
+   "Ezzedine Ghlamallah",
+   "Laurence Gialdini",
+   "Sami Ben Larbi"
+  ],
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
+  "year": 2025,
+  "published": "2025-07-31",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "greenwashing"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4412728449",
   "doi": "10.1016/j.jenvman.2025.126690",
   "title": "The impact of climate policy uncertainty on green mergers and acquisitions",
@@ -4779,31 +4853,6 @@
    ]
   },
   "has_abstract": false,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W4412732344",
-  "doi": "10.1108/sampj-08-2024-0854",
-  "title": "Integrating societal issues into the asset allocation and selection strategies of ethical funds: the case of socially responsible funds and Islamic funds",
-  "authors": [
-   "Ezzedine Ghlamallah",
-   "Laurence Gialdini",
-   "Sami Ben Larbi"
-  ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
-  "year": 2025,
-  "published": "2025-07-29",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "greenwashing"
-   ]
-  },
-  "has_abstract": true,
   "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
@@ -5019,7 +5068,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2025,
-  "published": "2025-06-29",
+  "published": "2025-07-01",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -5081,6 +5130,30 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W4411570549",
+  "doi": "10.1108/srj-12-2024-0878",
+  "title": "Sustainability culture in accounting firms: leveraging AI to strengthen green human and structural capital",
+  "authors": [
+   "Saeed Awadh Bin‐Nashwan",
+   "Jackie Zhanbiao Li"
+  ],
+  "journal": "Social Responsibility Journal",
+  "journal_id": "srj",
+  "year": 2025,
+  "published": "2025-06-24",
+  "type": "article",
+  "language": "en",
+  "stream": "core",
+  "terms": {
+   "core": [
+    "strong sustainability"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4411544410",
   "doi": "10.1016/j.jenvman.2025.126306",
   "title": "Greening China's supply chains: A coordinated policy approach",
@@ -5108,30 +5181,6 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W4411570549",
-  "doi": "10.1108/srj-12-2024-0878",
-  "title": "Sustainability culture in accounting firms: leveraging AI to strengthen green human and structural capital",
-  "authors": [
-   "Saeed Awadh Bin‐Nashwan",
-   "Jackie Zhanbiao Li"
-  ],
-  "journal": "Social Responsibility Journal",
-  "journal_id": "srj",
-  "year": 2025,
-  "published": "2025-06-23",
-  "type": "article",
-  "language": "en",
-  "stream": "core",
-  "terms": {
-   "core": [
-    "strong sustainability"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
   "id": "W4411397610",
   "doi": "10.1108/sampj-10-2024-1181",
   "title": "Framing the future: an analysis of the early aviation agenda of the von der Leyen Commission (2019–2024)",
@@ -5141,7 +5190,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2025,
-  "published": "2025-06-18",
+  "published": "2025-06-19",
   "type": "article",
   "language": "en",
   "stream": "core",
@@ -5484,6 +5533,29 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W4410381774",
+  "doi": "10.1108/sampj-12-2023-0919",
+  "title": "Multi-capital accounting: why and what’s next? A powerful driving force to transform business models toward regeneration",
+  "authors": [
+   "Christophe Sempels"
+  ],
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
+  "year": 2025,
+  "published": "2025-05-16",
+  "type": "article",
+  "language": "en",
+  "stream": "core",
+  "terms": {
+   "core": [
+    "strong sustainability"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4410352711",
   "doi": "10.1016/j.jclepro.2025.145720",
   "title": "Analysis of barriers for hydrogen-fueled logistics under integrated sustainability: A DEMATEL-TOWS framework",
@@ -5511,29 +5583,6 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W4410381774",
-  "doi": "10.1108/sampj-12-2023-0919",
-  "title": "Multi-capital accounting: why and what’s next? A powerful driving force to transform business models toward regeneration",
-  "authors": [
-   "Christophe Sempels"
-  ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
-  "year": 2025,
-  "published": "2025-05-13",
-  "type": "article",
-  "language": "en",
-  "stream": "core",
-  "terms": {
-   "core": [
-    "strong sustainability"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
   "id": "W4410332295",
   "doi": "10.1002/bse.4321",
   "title": "Legitimacy in the Literature: Distinguishing Between Perceived and Actual Value Congruence in Carbon Reduction Initiatives",
@@ -5555,7 +5604,7 @@
    ]
   },
   "has_abstract": true,
-  "mentions_sustainability": false,
+  "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
  {
@@ -5962,7 +6011,7 @@
    ]
   },
   "has_abstract": true,
-  "mentions_sustainability": false,
+  "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
  {
@@ -6083,7 +6132,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2025,
-  "published": "2025-03-06",
+  "published": "2025-03-07",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -6288,7 +6337,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2025,
-  "published": "2025-01-21",
+  "published": "2025-01-22",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -6769,6 +6818,30 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W4404620978",
+  "doi": "10.1108/srj-09-2023-0488",
+  "title": "Antecedents and customer-related outcomes of perceived CSR authenticity of Indian banks: developing an integrated model",
+  "authors": [
+   "Divya Sharma",
+   "Rakesh Kumar"
+  ],
+  "journal": "Social Responsibility Journal",
+  "journal_id": "srj",
+  "year": 2024,
+  "published": "2024-11-26",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "greenwashing"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": false,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4404665282",
   "doi": "10.1002/csr.3056",
   "title": "The influence of NGO ‐corporate relationship on environmental disclosure: Evidence from the fashion industry",
@@ -6817,30 +6890,6 @@
    ]
   },
   "has_abstract": false,
-  "mentions_sustainability": false,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W4404620978",
-  "doi": "10.1108/srj-09-2023-0488",
-  "title": "Antecedents and customer-related outcomes of perceived CSR authenticity of Indian banks: developing an integrated model",
-  "authors": [
-   "Divya Sharma",
-   "Rakesh Kumar"
-  ],
-  "journal": "Social Responsibility Journal",
-  "journal_id": "srj",
-  "year": 2024,
-  "published": "2024-11-22",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "greenwashing"
-   ]
-  },
-  "has_abstract": true,
   "mentions_sustainability": false,
   "first_seen": "2026-11-17"
  },
@@ -7453,7 +7502,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2024,
-  "published": "2024-09-05",
+  "published": "2024-09-06",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -7811,7 +7860,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2024,
-  "published": "2024-07-15",
+  "published": "2024-07-17",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -8041,7 +8090,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2024,
-  "published": "2024-05-29",
+  "published": "2024-05-31",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -8599,7 +8648,7 @@
    ]
   },
   "has_abstract": true,
-  "mentions_sustainability": true,
+  "mentions_sustainability": false,
   "first_seen": "2026-11-17"
  },
  {
@@ -8768,7 +8817,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-12-08",
+  "published": "2023-12-12",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -8819,7 +8868,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-11-25",
+  "published": "2023-11-28",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -8871,7 +8920,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-10-26",
+  "published": "2023-10-30",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -9014,6 +9063,32 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W4386708473",
+  "doi": "10.1093/ce/zkad040",
+  "title": "The UAE’s energy system and GHG emissions: pathways to achieving national goals by 2050",
+  "authors": [
+   "Ammar Hummieda",
+   "Ali Bouabid",
+   "Karim Moawad",
+   "Ahmad Turki Mayyas"
+  ],
+  "journal": "Clean Energy",
+  "journal_id": "ce",
+  "year": 2023,
+  "published": "2023-09-13",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "business-as-usual"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": false,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W4386640506",
   "doi": "10.1002/bse.3562",
   "title": "Firms' sustainability engagement and sustainability‐related controversies",
@@ -9076,7 +9151,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-08-30",
+  "published": "2023-08-31",
   "type": "article",
   "language": "en",
   "stream": "core",
@@ -9395,7 +9470,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-07-08",
+  "published": "2023-07-11",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -9505,32 +9580,6 @@
   },
   "has_abstract": true,
   "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W4386708473",
-  "doi": "10.1093/ce/zkad040",
-  "title": "The UAE’s energy system and GHG emissions: pathways to achieving national goals by 2050",
-  "authors": [
-   "Ammar Hummieda",
-   "Ali Bouabid",
-   "Karim Moawad",
-   "Ahmad Turki Mayyas"
-  ],
-  "journal": "Clean Energy",
-  "journal_id": "ce",
-  "year": 2023,
-  "published": "2023-06-03",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "business-as-usual"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": false,
   "first_seen": "2026-11-17"
  },
  {
@@ -9880,7 +9929,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-02-16",
+  "published": "2023-02-20",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -10062,7 +10111,7 @@
   "journal": "Sustainability Accounting, Management and Policy Journal",
   "journal_id": "sampj",
   "year": 2023,
-  "published": "2023-01-11",
+  "published": "2023-01-12",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -10341,7 +10390,7 @@
   "journal": "Social Responsibility Journal",
   "journal_id": "srj",
   "year": 2022,
-  "published": "2022-10-11",
+  "published": "2022-10-13",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -10378,18 +10427,17 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W4301401232",
-  "doi": "10.1002/csr.2389",
-  "title": "The effect of sustainable business practices on profitability. Accounting for strategic disclosure",
+  "id": "W4301180082",
+  "doi": "10.1108/sampj-04-2022-0182",
+  "title": "Regulation of the fashion supply chains and the sustainability–growth balance",
   "authors": [
-   "Massimiliano Cerciello",
-   "Francesco Busato",
-   "Simone Taddeo"
+   "Emese Dobos",
+   "Andrea Éltető"
   ],
-  "journal": "Corporate Social Responsibility and Environmental Management",
-  "journal_id": "csrem",
+  "journal": "Sustainability Accounting, Management and Policy Journal",
+  "journal_id": "sampj",
   "year": 2022,
-  "published": "2022-10-04",
+  "published": "2022-10-05",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -10403,15 +10451,16 @@
   "first_seen": "2026-11-17"
  },
  {
-  "id": "W4301180082",
-  "doi": "10.1108/sampj-04-2022-0182",
-  "title": "Regulation of the fashion supply chains and the sustainability–growth balance",
+  "id": "W4301401232",
+  "doi": "10.1002/csr.2389",
+  "title": "The effect of sustainable business practices on profitability. Accounting for strategic disclosure",
   "authors": [
-   "Emese Dobos",
-   "Andrea Éltető"
+   "Massimiliano Cerciello",
+   "Francesco Busato",
+   "Simone Taddeo"
   ],
-  "journal": "Sustainability Accounting, Management and Policy Journal",
-  "journal_id": "sampj",
+  "journal": "Corporate Social Responsibility and Environmental Management",
+  "journal_id": "csrem",
   "year": 2022,
   "published": "2022-10-04",
   "type": "article",
@@ -12767,7 +12816,7 @@
   "authors": [
    "S. E. Harris",
    "Jan Weinzettel",
-   "Andrea Bigano A",
+   "Andrea Bigano",
    "Albin Källmén"
   ],
   "journal": "Journal of Cleaner Production",
@@ -14976,7 +15025,7 @@
   "journal": "Clean Technologies and Environmental Policy",
   "journal_id": "ctep",
   "year": 2011,
-  "published": "2011-06-03",
+  "published": "2011-06-04",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -15010,6 +15059,30 @@
    ]
   },
   "has_abstract": false,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
+  "id": "W2045952197",
+  "doi": "10.1002/bse.681",
+  "title": "Stakeholder management and sustainability strategies in the French nuclear industry",
+  "authors": [
+   "Subhabrata Bobby Banerjee",
+   "Annabel-Mauve Bonnefous"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "year": 2011,
+  "published": "2011-01-30",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "business-as-usual"
+   ]
+  },
+  "has_abstract": true,
   "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
@@ -15062,6 +15135,31 @@
   "first_seen": "2026-11-17"
  },
  {
+  "id": "W2014385711",
+  "doi": "10.1002/bse.653",
+  "title": "Sustainability practices: trends in New Zealand businesses",
+  "authors": [
+   "Eva Marie Collins",
+   "Juliet Roper",
+   "Stewart Lawrence"
+  ],
+  "journal": "Business Strategy and the Environment",
+  "journal_id": "bse",
+  "year": 2010,
+  "published": "2010-11-22",
+  "type": "article",
+  "language": "en",
+  "stream": "adjacent",
+  "terms": {
+   "adjacent": [
+    "business case for sustainability"
+   ]
+  },
+  "has_abstract": true,
+  "mentions_sustainability": true,
+  "first_seen": "2026-11-17"
+ },
+ {
   "id": "W2008163605",
   "doi": "10.1177/0007650310371357",
   "title": "A New Future for Business? Rethinking Management Theory and Business Strategy",
@@ -15084,30 +15182,6 @@
   },
   "has_abstract": true,
   "mentions_sustainability": false,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W2045952197",
-  "doi": "10.1002/bse.681",
-  "title": "Stakeholder management and sustainability strategies in the French nuclear industry",
-  "authors": [
-   "Subhabrata Bobby Banerjee",
-   "Annabel-Mauve Bonnefous"
-  ],
-  "journal": "Business Strategy and the Environment",
-  "journal_id": "bse",
-  "year": 2010,
-  "published": "2010-05-18",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "business-as-usual"
-   ]
-  },
-  "has_abstract": true,
-  "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
  {
@@ -15157,31 +15231,6 @@
    ]
   },
   "has_abstract": false,
-  "mentions_sustainability": true,
-  "first_seen": "2026-11-17"
- },
- {
-  "id": "W2014385711",
-  "doi": "10.1002/bse.653",
-  "title": "Sustainability practices: trends in New Zealand businesses",
-  "authors": [
-   "Eva Marie Collins",
-   "Juliet Roper",
-   "Stewart Lawrence"
-  ],
-  "journal": "Business Strategy and the Environment",
-  "journal_id": "bse",
-  "year": 2009,
-  "published": "2009-06-11",
-  "type": "article",
-  "language": "en",
-  "stream": "adjacent",
-  "terms": {
-   "adjacent": [
-    "business case for sustainability"
-   ]
-  },
-  "has_abstract": true,
   "mentions_sustainability": true,
   "first_seen": "2026-11-17"
  },
@@ -15299,7 +15348,7 @@
   "journal": "Organization & Environment",
   "journal_id": "oae",
   "year": 2007,
-  "published": "2007-11-19",
+  "published": "2007-12-01",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
@@ -15346,7 +15395,7 @@
   "journal": "Clean Technologies and Environmental Policy",
   "journal_id": "ctep",
   "year": 2006,
-  "published": "2006-09-08",
+  "published": "2006-09-09",
   "type": "article",
   "language": "en",
   "stream": "core",
@@ -15419,7 +15468,7 @@
   "journal": "Business & Society",
   "journal_id": "bas",
   "year": 2005,
-  "published": "2005-11-01",
+  "published": "2005-12-01",
   "type": "article",
   "language": "en",
   "stream": "adjacent",
